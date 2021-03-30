@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ModalPage } from './Modals/modal/modal.page';
 
 
 
@@ -13,14 +14,12 @@ export class LoginPage implements OnInit {
 
   constructor(public modalController: ModalController) { }
 
-  async presentModal() {
+  async showModal(){
+    console.log("Modal aberto")
     const modal = await this.modalController.create({
-      component: LoginPage,
-      cssClass: 'my-custom-class',
-      swipeToClose: true,
-      presentingElement: await this.modalController.getTop() // Get the top-most ion-modal
+    component: ModalPage
     });
-    return await modal.present();
+    modal.present();
   }
 
   ngOnInit() {
