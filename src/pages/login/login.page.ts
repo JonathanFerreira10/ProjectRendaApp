@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, Platform } from '@ionic/angular';
+import { ModalController, Platform, NavController } from '@ionic/angular';
 import { ModalPage } from './Modals/modal/modal.page';
 import { StorageService, Item } from '../../app/storage.service';
 
@@ -10,11 +10,14 @@ import { StorageService, Item } from '../../app/storage.service';
 })
 export class LoginPage implements OnInit {
 
+
   // Profile objects
   items: Item[] = [];
   newItem: Item = <Item>{};
 
-  constructor(private storageService: StorageService, public modalController: ModalController, private plt: Platform) { 
+
+
+  constructor(private storageService: StorageService, public modalController: ModalController, private plt: Platform, private nav: NavController) { 
     this.plt.ready().then(() => {
       this.loadItems();
     })
@@ -36,4 +39,9 @@ export class LoginPage implements OnInit {
       this.items = items;
     });
   }
+
+  // pushPage(){
+  //   this.nav.navigateForward(`/home/${this.newItem.id}`);
+  // }
+
 }

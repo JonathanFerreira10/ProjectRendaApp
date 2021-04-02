@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavController, LoadingController } from '@ionic/angular';
 import { StorageService, Item } from '../../../../app/storage.service';
 
 @Component({
@@ -12,15 +12,26 @@ export class ModalPage implements OnInit {
   items: Item[] = [];
   newItem: Item = <Item>{};
 
-  constructor(private storageService: StorageService, public modalController: ModalController) { }
+  private loading;
+
+  constructor(private storageService: StorageService, public modalController: ModalController, private navCtrl: NavController, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
+    this.modalController.dismiss();
   }
 
-  close(){
+  async close(){
     console.log("Modal Fechado")
-    window.location.reload();
-    this.modalController.dismiss();
+   
+    this.loadingCtrl.create({message: 'Loading...'}).then((overlay)=> {
+      this.loading = overlay;
+      this.loading.present();
+    });
+
+    setTimeout(() => {
+      this.loading.dismiss(); 
+      window.location.reload(); 
+    },1500)
   }
 
   addItem(){
