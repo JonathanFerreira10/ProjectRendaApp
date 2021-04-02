@@ -5,6 +5,38 @@
 </ion-header>
 
 <ion-content>
-  <p style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, aliquid, nobis, ex omnis vitae porro amet modi placeat architecto quidem consequuntur quos tempore laudantium libero? Aliquid magni reiciendis culpa voluptates.</p>
-  <ion-button (click) = "close()">Fechar</ion-button>
+  <br>
+
+  <ion-avatar style="margin-left: 40%;">
+    <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
+  </ion-avatar>
+
+  <br>
+
+  <ion-button style="margin-left: 26%;">Selecionar Foto</ion-button>
+
+  <br>
+
+  <br>
+
+<div>
+  <ion-item>
+    <ion-label position="stacked">Nome</ion-label>
+    <ion-input [(ngModel)]="newItem.name"></ion-input>
+  </ion-item>
+
+  <br>
+
+  <ion-item>
+    <ion-label position="stacked">Renda</ion-label>
+    <ion-input [(ngModel)]="newItem.income"></ion-input>
+  </ion-item>
+
+</div>
+
+  <br>
+
+  <ion-button color="success" (click) = "addItem()">Cadastrar</ion-button>
+  <ion-button color="danger" (click) = "close()">Fechar</ion-button>
+  
 </ion-content>

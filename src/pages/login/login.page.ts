@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { ModalPage } from './Modals/modal/modal.page';
-
-
-
+import { StorageService, Item } from '../../app/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +10,15 @@ import { ModalPage } from './Modals/modal/modal.page';
 })
 export class LoginPage implements OnInit {
 
-  constructor(public modalController: ModalController) { }
+  // Profile objects
+  items: Item[] = [];
+  newItem: Item = <Item>{};
+
+  constructor(private storageService: StorageService, public modalController: ModalController, private plt: Platform) { 
+    this.plt.ready().then(() => {
+      this.loadItems();
+    })
+  }
 
   async showModal(){
     console.log("Modal aberto")
@@ -25,4 +31,9 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  loadItems(){
+    this.storageService.getItems().then(items => {
+      this.items = items;
+    });
+  }
 }
