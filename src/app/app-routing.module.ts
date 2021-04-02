@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'modal',
     loadChildren: () => import('../pages/login/Modals/modal/modal.module').then( m => m.ModalPageModule)
   },
+  {
+    path: 'coach',
+    loadChildren: () => import('../pages/login/coach/coach.module').then( m => m.CoachPageModule)
+  },
+
   
   
 ];
