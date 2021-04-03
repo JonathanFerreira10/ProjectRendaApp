@@ -40,8 +40,8 @@ export class LoginPage implements OnInit {
     });
   }
 
-  // pushPage(){
-  //   this.nav.navigateForward(`/home/${this.newItem.id}`);
-  // }
+  pushPage(){
+    this.nav.navigateForward(`/home/${this.items[0].name}`);
+  }
 
 }
