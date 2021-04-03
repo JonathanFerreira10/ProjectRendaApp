@@ -19,13 +19,13 @@
           <ion-avatar slot="start">
             <img class="" src="https://firebasestorage.googleapis.com/v0/b/imobzi-app-production.appspot.com/o/users%2F8SwANwvDjaRXImIcFY8WjahEdFs2%2Fprofile-photo?alt=media&token=0109cd8b-50bf-475f-9479-5cc05e832971">
           </ion-avatar>
-          <a href="/home">{{item.name}}</a>
+          <a (click) = "pushPage()">{{item.name}}</a>
         </ion-item>
        </ion-col>
   </ion-row>
 </ion-grid>
 
-<ion-grid >
+<ion-grid>
   <ion-row justify-content-center align-items-end style="height:100%">
        <ion-col col-12>
          <ion-button class = "button" class="ion-color ion-color-success" (click) = "showModal()"><b>Se cadastrar</b></ion-button>
