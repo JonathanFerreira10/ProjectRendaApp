@@ -7,15 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  public options: Array<any> = [
-    { name: 'Criar Fatura' },
-    { name: 'Visualizar Fatura' },
-    { name: 'Status da Renda' },
-    { name: 'Coach de Investimento' },
-  ];
-
-  public slidesOptions: any = { slidesPerView: 3, freeModey: true};
-
   constructor() {}
-  
+
 }
