@@ -11,7 +11,7 @@ export class HomePage {
     { name: 'Criar Fatura' },
     { name: 'Visualizar Fatura' },
     { name: 'Status da Renda' },
-    { name: 'Coach de Investimento' },
+    { name: 'Coach de Investimento', url: "/coach" },
   ];
 
   public slidesOptions: any = { slidesPerView: 3, freeModey: true};

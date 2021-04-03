@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Bem vindo</ion-title>
+      <ion-title size="large">Bem vindo mestre</ion-title>
     </ion-toolbar>
   </ion-header>
 </ion-content>
@@ -19,7 +19,7 @@
     <ion-slides [options]="slidesOptions">
       <ion-slide *ngFor="let option of options">
         <div class="container ion-text">
-          <span>{{ option.name }}</span>
+          <a [routerLink] = "option.url" >{{ option.name }}</a>
         </div>
       </ion-slide>
     </ion-slides>
