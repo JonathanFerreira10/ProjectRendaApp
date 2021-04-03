@@ -7,7 +7,7 @@ import { StorageService, Item} from './storage.service'
 const routes: Routes = [
   
   {
-    path: 'home',
+    path: 'home/:name',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
