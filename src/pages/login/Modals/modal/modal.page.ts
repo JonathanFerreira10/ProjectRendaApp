@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavController, LoadingController } from '@ionic/angular';
+import { ModalController, NavController, LoadingController, ToastController } from '@ionic/angular';
 import { StorageService, Item } from '../../../../app/storage.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class ModalPage implements OnInit {
 
   private loading;
 
-  constructor(private storageService: StorageService, public modalController: ModalController, private navCtrl: NavController, private loadingCtrl: LoadingController) { }
+  constructor(private storageService: StorageService, public modalController: ModalController, private navCtrl: NavController, private loadingCtrl: LoadingController, private toastController: ToastController) { }
 
   ngOnInit() {
     this.modalController.dismiss();
@@ -40,6 +40,7 @@ export class ModalPage implements OnInit {
 
     this.storageService.addItem(this.newItem).then(item => {
       this.newItem = <Item>{};
+      this.showToast(`Usuário criado!`);
       this.loadItems();
     });
   }
@@ -50,4 +51,11 @@ export class ModalPage implements OnInit {
     });
   }
 
+  async showToast(msg){
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 2000
+    });
+    toast.present();
+  }
 }

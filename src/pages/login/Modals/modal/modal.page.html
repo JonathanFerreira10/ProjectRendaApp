@@ -1,42 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Cadastro</ion-title>
+  <ion-toolbar color="success">
+    <ion-title><strong>cadastro</strong></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <br>
-
-  <ion-avatar style="margin-left: 40%;">
-    <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
-  </ion-avatar>
-
-  <br>
-
-  <ion-button style="margin-left: 26%;">Selecionar Foto</ion-button>
-
-  <br>
-
-  <br>
-
+  <!-- Profile avatar -->
+  <div class="ion-text-center">
+      <img style="width: 30%; display: block; margin: 20px auto; border-radius: 100%;" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg">
+    <ion-button>Selecionar Foto</ion-button>
+  </div>
+  <br><br>
 <div>
+  <!-- Inputs -->
   <ion-item>
     <ion-label position="stacked">Nome</ion-label>
     <ion-input [(ngModel)]="newItem.name"></ion-input>
   </ion-item>
-
   <br>
-
   <ion-item>
     <ion-label position="stacked">Renda</ion-label>
     <ion-input [(ngModel)]="newItem.income"></ion-input>
   </ion-item>
-
 </div>
-
   <br>
-
-  <ion-button color="success" (click) = "addItem()">Cadastrar</ion-button>
-  <ion-button color="danger" (click) = "close()">Fechar</ion-button>
-  
+  <!-- Botões de cadastro -->
+  <div style="margin-bottom: 20px;" class="ion-text-center">
+    <ion-button color="success" (click)="addItem()">Cadastrar</ion-button>
+    <ion-button color="danger" (click)="close()">Fechar</ion-button>
+  </div>
 </ion-content>
