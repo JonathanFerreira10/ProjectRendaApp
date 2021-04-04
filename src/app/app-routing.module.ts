@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'coach',
     loadChildren: () => import('../pages/login/coach/coach.module').then( m => m.CoachPageModule)
   },
+  {
+    path: 'cadastrar-fatura',
+    loadChildren: () => import('../pages/login/cadastrar-fatura/cadastrar-fatura.module').then( m => m.CadastrarFaturaPageModule)
+  },
 
   
   
