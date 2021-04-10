@@ -4,6 +4,8 @@ DEPENDECIES:
 
 IONIC STORAGE: npm i @ionic/storage-angular (Caso não instale essa dependecia o Storage não irá funcionar, instale na raiz do projeto)
 
+IONIC: npm i -g @ionic/cli (Comando necessário para instalar o Ionic)
+
 
 INSTRUCTIONS: 
 
