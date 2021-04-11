@@ -6,8 +6,14 @@ IONIC STORAGE: npm i @ionic/storage-angular (Caso não instale essa dependecia o
 
 IONIC: npm i -g @ionic/cli (Comando necessário para instalar o Ionic)
 
+JQUERY: npm install @types/jquery(Comando necessário para instalar o jQuery)
+
+import * as $ from 'jquery' (Importar no "App.module")
+
 
 INSTRUCTIONS: 
 
 - Não exluam o arquivo storage.service.ts 
 - Ao finalizar a implementação do código, publique o código na devida Branch. 
+
+
