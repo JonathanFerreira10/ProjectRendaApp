@@ -1,9 +1,128 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>coach</ion-title>
+
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/home/undefined">
+    </ion-back-button>
+  </ion-buttons>
+    <ion-title>
+      Coach
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+<ion-content>  
+  <ion-slides [options]="{freeMode: true, slidesPerView: 'auto'}">
+    <ion-slide>
+      <ion-button 
+      expand="full"
+      color="success"
+    >
+        <ion-icon name="newspaper-outline"></ion-icon>
+        Noticias
+
+    </ion-button>
+    <h2></h2>
+    <b > <strong>Estamos aqui para ajuda-lo!</strong> </b>
+    <p>As melhores noticias sobre o mercado financeiro você encontra aqui</p>
+    <h2></h2>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card color= "#d7d8da">
+              <ion-card-header color="black">
+                <b class="Acao" >UAM9982.2 <ion-icon color="danger" size="40px" name="caret-down-outline"></ion-icon> -1.956% </b>
+            </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card color="#d7d8da">
+              <ion-card-header color="black">
+                <b class="Acao">UAM9982.2 <ion-icon color="danger" size="40px" name="caret-down-outline"></ion-icon> -1.956% </b>
+            </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card color="#d7d8da">
+              <ion-card-header color="black">
+                <b class="Acao">UAM9982.2 <ion-icon color="danger" size="40px" name="caret-down-outline"></ion-icon> -1.956% </b>
+            </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card color="#d7d8da">
+              <ion-card-header color="black">
+                <b class="Acao">SID212.2 <ion-icon color="success" size= auto name="caret-up-outline"></ion-icon> +2.223% </b>
+            </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card color="#d7d8da">
+              <ion-card-header color="black">
+                <b class="Acao">UAM9982.2 <ion-icon color="danger" size="40px" name="caret-down-outline"></ion-icon> -1.956% </b>
+            </ion-card-header>
+            </ion-card>
+          </ion-col>
+            <ion-col>
+            <ion-card color="#d7d8da">
+              <ion-card-header color="black">
+                <b class="Acao">UAM9982.2 <ion-icon color="danger" size="40px" name="caret-down-outline"></ion-icon> -1.956% </b>
+            </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+    
+    </ion-slide>
+    <ion-slide>
+      <ion-button 
+      expand="full"
+      color="success"
+    >
+        <ion-icon name="leaf-outline"></ion-icon>
+        Dicas
+
+  </ion-button>
+    </ion-slide>
+    
+  </ion-slides>
+  <style>
+    ion-slides {
+      height: 100%;
+    }
+
+    .swiper-slide {
+      display: block;
+    }
+
+    .swiper-slide h2 {
+      margin-top: 1.8rem;
+    }
+
+    b {
+      font-weight: 500;
+      color: var(--ion-color-step-600, #000000);
+    }
+
+    p {
+      padding: 0 40px;
+      font-size: 15px;
+      line-height: 0;
+      color: var(--ion-color-step-600, #60646b);
+    }
+
+    p b {
+      color: var(--ion-text-color, #000000);
+    }
+  </style>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="success" size="large">
+
+    </ion-tab-bar>
+  </ion-tabs>
 
 </ion-content>
+
+
+
