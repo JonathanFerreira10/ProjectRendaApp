@@ -8,12 +8,19 @@ export interface Item {
   modified: number
 }
 
+// criar interface qualquer compra
+
 export interface Invoice {
   id: number,
   title: string,
   value: number,
   modified: number,
-  wasPaid: boolean
+  wasPaid: boolean,
+  monthly: boolean, // New: saber se é recorrente
+  renewalDay: number, // New: dia da renovação
+  paymentDate: number, // New: dia do pagamento
+  dueDate: number, // New: dia da expiração
+  onwerID: number // New: ID do usuario proprietario
 }
 
 const ITEMS_KEY = "my-items";

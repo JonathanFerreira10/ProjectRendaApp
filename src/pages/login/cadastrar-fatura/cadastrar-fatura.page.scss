@@ -1,0 +1,26 @@
+// Layout das linhas e colunas
+
+.row-content-top {
+    margin-bottom: 20px;
+}
+
+.row-content-bottom {
+    margin-bottom: 50px;
+}
+
+.col-center{
+    margin: auto;
+}
+
+// Design do SVG
+
+.custom-shape-divider-top-1617075690 svg {
+    position: relative;
+    display: inline-block;
+    width: calc(252% + 1.3px);
+    height: 180px;
+}
+
+.custom-shape-divider-top-1617075690 .shape-fill {
+    fill: #1DDC7B;
+}

@@ -3,22 +3,37 @@ img{
     width: 53px;
 }
 
+// Design do SVG
+
+/*
+// Estava dando erro de layout
 .custom-shape-divider-top-1617075690 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     overflow: hidden;
     line-height: 0;
 }
+*/
 
 .custom-shape-divider-top-1617075690 svg {
     position: relative;
-    display: block;
+    display: inline-block;
     width: calc(252% + 1.3px);
-    height: 500px;
+    height: 300px;
 }
 
 .custom-shape-divider-top-1617075690 .shape-fill {
     fill: #1DDC7B;
+}
+
+// Centralização e design da lista de perfis
+
+.profile-item {
+    width: 50%;
+    margin: 0 auto 5px auto;
+}
+
+.profile-item a {
+    color: white;
 }
