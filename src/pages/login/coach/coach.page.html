@@ -90,13 +90,60 @@
 
   
 
+
+  
     <ion-slide>
       <ion-button expand="full" color="success">
           <ion-icon name="leaf-outline"></ion-icon>
           Dicas
      </ion-button>
-    </ion-slide>
+  
+      <br>
+      <b > <strong>Vamos auxilia-lo!</strong>
+      <p>Dicas que podem mudar sua vida financeira? Aqui tem!</p>
+      </b>
+      <br>
+
+<ion-row>
+  <ion-col>
+    <ion-button color="success" class="centro">
+      <ion-icon name="leaf-outline"></ion-icon>
+      Inteligentes
+ </ion-button>
+ <h2 class="rolagemdicas">
+  <ion-card size="auto" class="carddicas" color= "#EBEBEB" *ngFor="let i of [0,1,2,3,4,5,6]" scroll-bar="65%" >
+    <ion-card-header>
+      <b>TITULO DA DICA</b>
+    </ion-card-header>
+    <ion-card-content>
+      <b>O texto se encontra aqui</b>
+    </ion-card-content>
+  </ion-card>
+  </h2>
+  </ion-col>
+  <ion-col class="centro">
+      <img src="https://i0.wp.com/geecomportamental.com/wp-content/uploads/2020/11/dicas.jpg?w=1000&ssl=1" alt="alternate text" class="dicas">
+  </ion-col>
+  <ion-col class="centro">
+    <ion-button color="success" class="centro">
+      <ion-icon name="leaf-outline"></ion-icon>
+      Financeira
+ </ion-button>
+    <h2 class="rolagemesquerda" >
+    <ion-card size="auto" class="carddicas" color= "#d7d8da" *ngFor="let i of [0,1,2,3,4,5,6]" scroll-bar="65">
+      <ion-card-header>
+        <b>TITULO DA DICA</b>
+      </ion-card-header>
+      <ion-card-content>
+        <b>O texto se encontra aqui</b>
+      </ion-card-content>
+   </ion-card>
+    </h2>
+  </ion-col>
+</ion-row>
     
+    
+    </ion-slide>
   </ion-slides>
 
 <style>  

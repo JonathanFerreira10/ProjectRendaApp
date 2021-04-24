@@ -1,4 +1,6 @@
 
+
+
 .centro{
     text-align: center;
 }
@@ -39,10 +41,6 @@
     height: 64%;
     overflow-y: scroll;
 }
-
-
-
-
 ::-webkit-scrollbar{
     width: 7px;
 }
@@ -55,3 +53,42 @@
 ::-webkit-scrollbar-thumb{
     background-color: rgb(0, 0, 0);
 }
+
+.dicas{
+border: 3px solid rgb(0, 0, 0) ;
+width: 500px;
+text-align: center
+}
+
+.carddicas{
+
+padding: 0px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 1px;
+margin-top: 4px;
+text-align: center;
+width: 300px;
+height: 250px;
+}
+.rolagemdicas{
+
+    margin: auto;
+    text-align: center;
+    padding: auto;
+    height: 15%;
+    overflow-y: scroll;
+}
+.corcardicas{
+    color: #e3e7e3;
+}
+.rolagemesquerda{
+    margin: auto;
+    text-align: center;
+    padding: auto;
+    height: 15%;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+
