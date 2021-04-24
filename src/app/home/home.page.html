@@ -7,17 +7,33 @@
 </ion-header>
 
 <ion-content>
-  <!-- to do Renault -->
-</ion-content>
-
-<ion-footer class="ion-no-border">
-  <ion-toolbar class="primary">
+  <div id="dashboard">
+    <!-- to do Renault -->
+  </div>
+  
+  <ion-toolbar>
     <ion-slides [options]="slidesOptions">
       <ion-slide *ngFor="let option of options">
-        <div class="container ion-text">
-          <a [routerLink] = "option.url" >{{ option.name }}</a>
+        <div class="container">
+            <a [routerLink] = "option.url" >{{ option.name }}</a>
         </div>
       </ion-slide>
     </ion-slides>
   </ion-toolbar>
-</ion-footer>
+    <ion-title id="preview">
+      <strong>ÚTILMOS GASTOS</strong>
+    </ion-title>
+    <ion-item-sliding *ngFor="let invoice of invoices"> 
+      <ion-item>
+        <ion-label text-wrap>
+          <h3>{{invoice.title}}</h3>
+          <ion-text color="secondary">
+            <p>{{invoice.value}}</p>
+          </ion-text>
+          <!-- <ion-text>
+            <p>{{invoice.dueDate}}</p>
+          </ion-text> -->
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+</ion-content>

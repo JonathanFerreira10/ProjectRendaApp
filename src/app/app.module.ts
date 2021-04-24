@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ModalPage } from '../pages/login/Modals/modal/modal.page';
 
+import * as $ from 'jquery';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

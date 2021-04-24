@@ -8,6 +8,8 @@ export interface Item {
   modified: number
 }
 
+// criar interface qualquer compra
+
 export interface Invoice {
   id: number,
   title: string,

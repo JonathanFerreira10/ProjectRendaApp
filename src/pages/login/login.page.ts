@@ -16,7 +16,6 @@ export class LoginPage implements OnInit {
   newItem: Item = <Item>{};
 
 
-
   constructor(private storageService: StorageService, public modalController: ModalController, private plt: Platform, private nav: NavController) { 
     this.plt.ready().then(() => {
       this.loadItems();
@@ -44,5 +43,4 @@ export class LoginPage implements OnInit {
   pushPage(){
     this.nav.navigateForward(`/home/${this.items[0].name}`);
   }
-
 }
