@@ -1,13 +1,11 @@
 
-.Acao{
+.centro{
     text-align: center;
 }
 .margem{
-    margin: auto;
-    padding: auto;
-}
-.tbt{
-    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 .ml-auto{
     margin-left: auto;
@@ -19,17 +17,26 @@
     width: 100px;
 }
 .fixador{
-    position: fixed;
+    margin: 0;
+    padding: 0;
 }
 .card{
+    border: 1px solid grey;
+    text-align: center;
     width: 400px;
-    height: 355px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -1px;
+    margin-top: 4px;
+    height: 354px;
+    padding: 0;
     
 }
 .rolagem{
-    height: 355px;
-    margin: 15px;
+    margin: auto;
+    text-align: center;
+    padding: auto;
+    height: 64%;
     overflow-y: scroll;
 }
 
