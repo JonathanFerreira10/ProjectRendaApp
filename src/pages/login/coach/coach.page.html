@@ -1,9 +1,192 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>coach</ion-title>
+
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/home/undefined">
+    </ion-back-button>
+  </ion-buttons>
+    <ion-title>
+      Coach
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
 
+  <ion-row cla>
+  <ion-tabs class="fixador">
+    <ion-tab-bar >
+      <ion-row *ngFor="let i of [0,1,2,3,4,5,6,7,8]">
+      <ion-col size="auto">
+          <ion-card  color= "#d7d8da"  class="margem">
+              <b class="centro" >UAM982.2 <ion-icon color="success" size="40px" name="caret-up-outline"></ion-icon> +1.956% </b>
+          </ion-card>
+      </ion-col>
+      </ion-row>
+    </ion-tab-bar>
+  </ion-tabs> 
+</ion-row>
+  
+  <ion-slides [options]="{slidesPerView: 'auto'}">
+    <ion-slide>
+      <ion-button expand="full" color="success">
+        <ion-icon name="newspaper-outline"></ion-icon>
+        Noticias
+
+    </ion-button>
+
+        <br>
+      <b > <strong>Estamos aqui para ajuda-lo!</strong>
+      <p>As melhores noticias sobre o mercado financeiro você encontra aqui</p>
+    </b>
+
+
+<h2 class="rolagem">
+  <ion-row  size="auto" *ngFor="let i of [0,1,2,3,4,5,6,7,8]">
+  <ion-card  color= "#d7d8da" class="card" *ngFor="let i of [0,1,2]" size="large" scroll-bar="65%" >
+    <ion-card-content class="ion-no-padding" >
+      <ion-row>
+      <ion-row>
+        <ion-avatar class="margem">
+          <img src="https://logodownload.org/wp-content/uploads/2013/12/rede-globo-logo-0.png">
+        </ion-avatar>
+        <b> 
+        <br>
+          globo.com.br 
+        <br>
+      </b>
+      </ion-row>
+      <ion-row size="auto">
+        <ion-col size="auto">
+        </ion-col>
+        <ion-col size="auto">
+          <b><strong>
+            <a href="https://www.globo.com/" target="_blank">AO VIVO | Maioria do STF mantém suspeição de Moro em caso de Lula</a>
+          
+          </strong>
+          </b>
+          <b>
+          <br><br>
+          Na semana passada, o Supremo anulou as condenações da Lava Jato contra o ex-presidente, deixando seu caminho livre para 2022, a noticias alegrou a muitos que aguardavam a reeleição do ex-presidente.
+          <br>
+          </b>
+        </ion-col>
+        <ion-col size="auto">
+       <img src="data:image/jpeg;base64,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" alt="">
+        </ion-col>
+        <ion-col>
+          <br><br><br><br>
+          <b>Postado a 1h</b>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+    </ion-card-content>
+    <ion-avatar></ion-avatar>    
+  </ion-card>
+  </ion-row>
+</h2>
+  </ion-slide>
+
+  
+
+
+  
+    <ion-slide>
+      <ion-button expand="full" color="success">
+          <ion-icon name="leaf-outline"></ion-icon>
+          Dicas
+     </ion-button>
+  
+      <br>
+      <b > <strong>Vamos auxilia-lo!</strong>
+      <p>Dicas que podem mudar sua vida financeira? Aqui tem!</p>
+      </b>
+      <br>
+
+<ion-row>
+  <ion-col>
+    <ion-button color="success" class="centro">
+      <ion-icon name="build-outline"></ion-icon>
+      Inteligentes
+ </ion-button>
+ <h2 class="rolagemdicas">
+  <ion-card size="auto" class="carddicas" color= "#EBEBEB" *ngFor="let i of [0,1,2,3,4,5,6]" scroll-bar="65%" >
+    <ion-card-header>
+      <b>TITULO DA DICA</b>
+    </ion-card-header>
+    <ion-card-content>
+      <b>O texto se encontra aqui</b>
+    </ion-card-content>
+  </ion-card>
+  </h2>
+  </ion-col>
+  <ion-col class="centro">
+      <img src="https://i0.wp.com/geecomportamental.com/wp-content/uploads/2020/11/dicas.jpg?w=1000&ssl=1" alt="alternate text" class="dicas">
+  </ion-col>
+  <ion-col class="centro">
+    <ion-button color="success" class="centro">
+      <ion-icon name="card-outline"></ion-icon>
+      Financeira
+ </ion-button>
+    <h2 class="rolagemesquerda" >
+    <ion-card size="auto" class="carddicas" color= "#d7d8da" *ngFor="let i of [0,1,2,3,4,5,6]" scroll-bar="65">
+      <ion-card-header>
+        <b>TITULO DA DICA</b>
+      </ion-card-header>
+      <ion-card-content>
+        <b>O texto se encontra aqui</b>
+      </ion-card-content>
+   </ion-card>
+    </h2>
+  </ion-col>
+</ion-row>
+    
+    
+    </ion-slide>
+  </ion-slides>
+
+<style>  
+  .swiper-slide {
+      display: block;
+    }
+
+  .swiper-slide h2 {
+      margin-top: 1.8rem;
+    }
+
+
+  h2{
+      margin: auto;
+      size: auto;
+      height: auto;
+    }
+
+  h1{
+          font-weight: 30;
+          color: var(--ion-color-step-600, #000000);
+    }
+  ion-slides {
+      height: 100%;
+    }
+  b {
+      font-weight: 500;
+      color: var(--ion-color-step-600, #000000);
+    }
+
+  p {
+      padding: 0 40px;
+      font-size: 15px;
+      line-height: 0;
+      color: var(--ion-color-step-600, #60646b);
+    }
+
+  p b {
+      color: var(--ion-text-color, #000000);
+    }
+</style>
+
 </ion-content>
+
+
+

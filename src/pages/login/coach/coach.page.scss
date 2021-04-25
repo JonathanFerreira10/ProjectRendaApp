@@ -1,0 +1,94 @@
+
+
+
+.centro{
+    text-align: center;
+}
+.margem{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.ml-auto{
+    margin-left: auto;
+}
+.noticias{
+    border: 1px solid darkgrey;
+}
+.ww{
+    width: 100px;
+}
+.fixador{
+    margin: 0;
+    padding: 0;
+}
+.card{
+    border: 1px solid grey;
+    text-align: center;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -1px;
+    margin-top: 4px;
+    height: 354px;
+    padding: 0;
+    
+}
+.rolagem{
+    margin: auto;
+    text-align: center;
+    padding: auto;
+    height: 64%;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar{
+    width: 7px;
+}
+::-webkit-scrollbar-track{
+    background-color: #2fdf75;
+}
+::-webkit-scrollbar-button{
+    background-color: #00ff0d00;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 0, 0);
+}
+
+.dicas{
+border: 3px solid rgb(0, 0, 0) ;
+width: 500px;
+text-align: center
+}
+
+.carddicas{
+
+padding: 0px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 1px;
+margin-top: 4px;
+text-align: center;
+width: 300px;
+height: 250px;
+}
+.rolagemdicas{
+
+    margin: auto;
+    text-align: center;
+    padding: auto;
+    height: 15%;
+    overflow-y: scroll;
+}
+.corcardicas{
+    color: #e3e7e3;
+}
+.rolagemesquerda{
+    margin: auto;
+    text-align: center;
+    padding: auto;
+    height: 15%;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+
