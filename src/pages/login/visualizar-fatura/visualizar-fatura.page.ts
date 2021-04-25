@@ -26,4 +26,12 @@ export class VisualizarFaturaPage implements OnInit {
     });
   }
 
-}
+  deleteInvoicee(){
+    this.storageService.deleteInvoice(this.invoices.pop().id).then(invoice => {
+      window.console.log("Removido")
+      this.loadInvoices()
+    })
+  }
+  
+  }
+
