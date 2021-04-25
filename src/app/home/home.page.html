@@ -27,7 +27,7 @@
 <ion-footer class="ion-no-border">
   <ion-toolbar class="primary">
     <ion-slides [options]="slidesOptions">
-      <ion-slide *ngFor="let option of options">
+      <ion-slide *ngFor="let option of options" [routerLink] = "option.url">
         <div class="container ion-text">
           <span>{{ option.name }}</span>
         </div>

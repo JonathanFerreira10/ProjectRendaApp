@@ -35,6 +35,11 @@ const routes: Routes = [
     path: 'cadastrar-gasto',
     loadChildren: () => import('../pages/login/cadastrar-gasto/cadastrar-gasto.module').then( m => m.CadastrarGastoPageModule)
   },
+  {
+    path: 'visualizar-fatura',
+    loadChildren: () => import('../pages/login/visualizar-fatura/visualizar-fatura.module').then( m => m.VisualizarFaturaPageModule)
+  },
+
 
   
   

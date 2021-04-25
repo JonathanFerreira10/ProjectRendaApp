@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/undefined">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title><strong>Visualizar Faturas</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor = "let invoice of invoices">
+      <ion-card-header>
+        <ion-card-title> 
+          {{invoice.title}}  
+          {{invoice.value}}
+          <ion-icon name="trash-outline" color = "danger" (click) = "deleteInvoice()"></ion-icon>
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-card-title>
+        <ion-card-subtitle> Vencimento: {{invoice.dueDate}}</ion-card-subtitle>       
+      </ion-card-header>
+    </ion-card>
+</ion-content>

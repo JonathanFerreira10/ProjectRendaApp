@@ -13,7 +13,7 @@ export class HomePage {
   
   public options: Array<any> = [
     { name: 'Criar Fatura', url: "/cadastrar-fatura" },
-    { name: 'Visualizar Fatura' },
+    { name: 'Visualizar Fatura', url: "/visualizar-fatura"},
     { name: 'Status da Renda' },
     { name: 'Coach', url: "/coach" },
     // deixei somente "Coach" pois "Coach de Investimento" estava aumentando

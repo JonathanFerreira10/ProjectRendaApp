@@ -5,16 +5,15 @@ img{
 
 // Design do SVG
 
-/*
+
 // Estava dando erro de layout
 .custom-shape-divider-top-1617075690 {
     position: absolute;
     top: 0;
     left: 0;
-    overflow: hidden;
-    line-height: 0;
+    right: 0;
 }
-*/
+
 
 .custom-shape-divider-top-1617075690 svg {
     position: relative;
@@ -25,6 +24,7 @@ img{
 
 .custom-shape-divider-top-1617075690 .shape-fill {
     fill: #1DDC7B;
+    animation: anim 3s ease-in-out infinite alternate;
 }
 
 // Centralização e design da lista de perfis
@@ -36,4 +36,14 @@ img{
 
 .profile-item a {
     color: white;
+}
+
+// Animação basica precisa melhorar --Jonathan
+
+@keyframes anim{
+
+    from{
+        transform: translate(-150px);
+    }
+
 }
