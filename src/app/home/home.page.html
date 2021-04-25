@@ -25,30 +25,34 @@
       </ion-card>
     </div>
   </div>
-  
+
+  <ion-card>
+  <ion-title id="preview">
+    <strong>ÚTILMOS GASTOS</strong>
+  </ion-title>
+  <ion-item-sliding *ngFor="let invoice of invoices"> 
+    <ion-item>
+      <ion-label text-wrap>
+        <h3>{{invoice.title}}</h3>
+        <ion-text color="secondary">
+          <p>{{invoice.value}}</p>
+        </ion-text>
+        <!-- <ion-text>
+          <p>{{invoice.dueDate}}</p>
+        </ion-text> -->
+      </ion-label>
+    </ion-item>
+  </ion-item-sliding>
+</ion-card>
+</ion-content>
+
+
   <ion-toolbar>
     <ion-slides [options]="slidesOptions">
-      <ion-slide *ngFor="let option of options">
+      <ion-slide *ngFor="let option of options" [routerLink] = "option.url">
         <div class="container">
-            <a [routerLink] = "option.url" >{{ option.name }}</a>
+          <span>{{ option.name }}</span>
         </div>
       </ion-slide>
     </ion-slides>
   </ion-toolbar>
-    <ion-title id="preview">
-      <strong>ÚTILMOS GASTOS</strong>
-    </ion-title>
-    <ion-item-sliding *ngFor="let invoice of invoices"> 
-      <ion-item>
-        <ion-label text-wrap>
-          <h3>{{invoice.title}}</h3>
-          <ion-text color="secondary">
-            <p>{{invoice.value}}</p>
-          </ion-text>
-          <!-- <ion-text>
-            <p>{{invoice.dueDate}}</p>
-          </ion-text> -->
-        </ion-label>
-      </ion-item>
-    </ion-item-sliding>
-</ion-content>

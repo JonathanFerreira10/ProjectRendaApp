@@ -14,8 +14,8 @@ export class HomePage {
   public options: Array<any> = [
     { name: 'Criar Fatura', url: "/cadastrar-fatura" },
     { name: 'Visualizar Fatura', url: "/visualizar-fatura"},
-    { name: 'Status da Renda' },
     { name: 'Coach', url: "/coach" },
+    { name: 'Sair', url: "/login" },
     // deixei somente "Coach" pois "Coach de Investimento" estava aumentando
     // o tamanho da caixa dele no slide.
   ];
