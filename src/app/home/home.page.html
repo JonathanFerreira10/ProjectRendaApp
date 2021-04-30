@@ -17,10 +17,15 @@
     <div class="ion-padding">
       <ion-card>
         <ion-card-header>
-          Bar Chart
+          Bar Chart - Renda Disponível
         </ion-card-header>
         <ion-card-content>
-          <canvas #barCanvas></canvas>
+          <h2>Renda Atual: 1500ex</h2>
+          <ion-progress-bar value="{{1500/1500}}" color="primary"> </ion-progress-bar>
+          <h2>Gastos e Faturas</h2>
+          <ion-progress-bar value="{{1200/1500}}" color="warning"> </ion-progress-bar>
+          <h2>Saldo Disponíl</h2>
+          <ion-progress-bar value="{{300/1500}}" color="success"></ion-progress-bar>
         </ion-card-content>
       </ion-card>
     </div>
