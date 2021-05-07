@@ -1,5 +1,21 @@
+.pagina{
+    width: auto;
+    background-color: rgb(180, 179, 179);
+    height: 35px;
+    margin: 0px;
+    text-align: center;
+    padding: 0px;
+}
+.preto{
+    text-align: center;
+    color: #000000;
+    margin: 5px;
 
+}
 
+.roxo{
+    color: #BA55D3;
+}
 
 .centro{
     text-align: center;
@@ -90,5 +106,38 @@ height: 250px;
     overflow-y: scroll;
     direction: rtl;
 }
+.swiper-slide {
+    display: block;
+  }
+
+.swiper-slide h2 {
+    margin-top: 1.8rem;
+  }
 
 
+h2{
+    margin: auto;
+    size: auto;
+    height: auto;
+  }
+
+h1{
+        font-weight: 30;
+        color: var(--ion-color-step-600, #000000);
+  }
+ion-slides {
+    height: 100%;
+  }
+b {
+    color: var(--ion-color-step-600, #000000);
+  }
+
+p {
+    padding: 0 40px;
+    font-size: 15px;
+    color: var(--ion-color-step-600, #60646b);
+  }
+
+p b {
+    color: var(--ion-text-color, #000000);
+  }

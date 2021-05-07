@@ -1,13 +1,10 @@
 <ion-header>
-  <ion-toolbar>
-
-  <ion-buttons slot="start">
-    <ion-back-button defaultHref="/home/undefined">
-    </ion-back-button>
-  </ion-buttons>
-    <ion-title>
-      Coach
-    </ion-title>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title><strong>Coach</strong></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -30,17 +27,21 @@
   
   <ion-slides [options]="{slidesPerView: 'auto'}">
     <ion-slide>
-      <ion-button expand="full" color="success">
-        <ion-icon name="newspaper-outline"></ion-icon>
-        Noticias
-
-    </ion-button>
-
+      <ion-row>
+        <ion-col>
+          <ion-card class="roxo" class="pagina">
+            <ion-card-title class="preto">
+              <ion-icon name="newspaper-outline"></ion-icon>
+              Noticias 
+            </ion-card-title>
+           </ion-card>
+    </ion-col>
+    </ion-row>
+  <div>
         <br>
-      <b > <strong>Estamos aqui para ajuda-lo!</strong>
+      <b ><strong>Estamos aqui para ajuda-lo!</strong>    </b>
       <p>As melhores noticias sobre o mercado financeiro você encontra aqui</p>
-    </b>
-
+  </div>
 
 <h2 class="rolagem">
   <ion-row  size="auto" *ngFor="let i of [0,1,2,3,4,5,6,7,8]">
@@ -146,47 +147,6 @@
     </ion-slide>
   </ion-slides>
 
-<style>  
-  .swiper-slide {
-      display: block;
-    }
-
-  .swiper-slide h2 {
-      margin-top: 1.8rem;
-    }
-
-
-  h2{
-      margin: auto;
-      size: auto;
-      height: auto;
-    }
-
-  h1{
-          font-weight: 30;
-          color: var(--ion-color-step-600, #000000);
-    }
-  ion-slides {
-      height: 100%;
-    }
-  b {
-      font-weight: 500;
-      color: var(--ion-color-step-600, #000000);
-    }
-
-  p {
-      padding: 0 40px;
-      font-size: 15px;
-      line-height: 0;
-      color: var(--ion-color-step-600, #60646b);
-    }
-
-  p b {
-      color: var(--ion-text-color, #000000);
-    }
-</style>
 
 </ion-content>
-
-
 
