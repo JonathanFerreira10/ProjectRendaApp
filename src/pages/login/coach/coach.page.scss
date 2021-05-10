@@ -84,28 +84,22 @@ margin-right: auto;
 margin-bottom: 1px;
 margin-top: 4px;
 text-align: center;
-width: 300px;
-height: 250px;
+min-height: 15px;
+max-height: 300px;
 }
 .rolagemdicas{
 
     margin: auto;
+    margin-bottom: auto;
     text-align: center;
     padding: auto;
-    height: 15%;
+    height: 290px;
     overflow-y: scroll;
 }
 .corcardicas{
     color: #e3e7e3;
 }
-.rolagemesquerda{
-    margin: auto;
-    text-align: center;
-    padding: auto;
-    height: 15%;
-    overflow-y: scroll;
-    direction: rtl;
-}
+
 .swiper-slide {
     display: block;
   }
