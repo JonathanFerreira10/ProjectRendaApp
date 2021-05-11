@@ -55,7 +55,11 @@ ion-slide {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 6.5px;
+  border-radius: 9px;
+}
+
+ion-icon {
+  font-size: 32px;
 }
 
 ion-button {

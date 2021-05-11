@@ -24,7 +24,7 @@
           <ion-progress-bar value="{{1500/1500}}" color="primary"> </ion-progress-bar>
           <h2>Gastos e Faturas</h2>
           <ion-progress-bar value="{{1200/1500}}" color="warning"> </ion-progress-bar>
-          <h2>Saldo Disponíl</h2>
+          <h2>Saldo Disponível</h2>
           <ion-progress-bar value="{{300/1500}}" color="success"></ion-progress-bar>
         </ion-card-content>
       </ion-card>
@@ -33,33 +33,36 @@
 
   <!-- To do - Gabriel, essa parte do código acredito que tenha que mostrar os vencimentos  próximos não?  -->
   <ion-card>
-  <ion-title id="preview">
-    <strong>ÚTILMOS GASTOS</strong>
-  </ion-title>
-  <ion-item-sliding *ngFor="let invoice of invoices"> 
-    <ion-item>
-      <ion-label text-wrap>
-        <h3>{{invoice.title}}</h3>
-        <ion-text color="secondary">
-          <p>{{invoice.value}}</p>
-        </ion-text>
-        <!-- <ion-text>
+    <ion-title id="preview">
+      <strong>ÚTILMOS GASTOS</strong>
+    </ion-title>
+    <ion-item-sliding *ngFor="let invoice of invoices">
+      <ion-item>
+        <ion-label text-wrap>
+          <h3>{{invoice.title}}</h3>
+          <ion-text color="secondary">
+            <p>{{invoice.value}}</p>
+          </ion-text>
+          <!-- <ion-text>
           <p>{{invoice.dueDate}}</p>
         </ion-text> -->
-      </ion-label>
-    </ion-item>
-  </ion-item-sliding>
-</ion-card>
+        </ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-card>
 </ion-content>
 
 
-  <ion-toolbar>
-    <ion-slides [options]="slidesOptions">
-      <ion-slide *ngFor="let option of options" [routerLink] = "option.url">
-        <div class="container">
-          <span>{{ option.name }}</span>
-        </div>
-      </ion-slide>
-    </ion-slides>
-  </ion-toolbar>
-
+<ion-toolbar>
+  <ion-slides [options]="slidesOptions">
+    <ion-slide *ngFor="let option of options" [routerLink]="option.url">
+      <ion-icon  *ngIf="option.name === 'Criar Fatura'" name="clipboard-outline"></ion-icon>
+      <ion-icon *ngIf="option.name === 'Visualizar Fatura'" name ="document-outline"></ion-icon>
+      <ion-icon *ngIf="option.name === 'Coach'" name="newspaper-outline"></ion-icon>
+      <ion-icon *ngIf="option.name === 'Sair'" name="power"></ion-icon>
+      <div class="container">
+        <span>{{ option.name }}</span>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-toolbar>
