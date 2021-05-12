@@ -1,6 +1,6 @@
 .pagina{
     width: auto;
-    background-color: rgb(180, 179, 179);
+    background-color: rgb(64, 184, 214);
     height: 35px;
     margin: 0px;
     text-align: center;
@@ -39,7 +39,7 @@
     padding: 0;
 }
 .card{
-    border: 1px solid grey;
+    border: 0px solid grey;
     text-align: center;
     width: 400px;
     margin-left: auto;
@@ -78,11 +78,11 @@ text-align: center
 
 .carddicas{
 
-padding: 0px;
+padding: 5px;
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 1px;
-margin-top: 4px;
+margin-bottom: 20px;
+margin-top: 3px;
 text-align: center;
 min-height: 15px;
 max-height: 300px;
