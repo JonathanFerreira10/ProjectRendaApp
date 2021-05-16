@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController, LoadingController, ToastController } from '@ionic/angular';
 import { StorageService, Item } from '../../../../app/storage.service';
+import {Plugins, CameraResultType, CameraSource} from '@capacitor/core'
 
 @Component({
   selector: 'app-modal',
@@ -57,5 +58,14 @@ export class ModalPage implements OnInit {
       duration: 2000
     });
     toast.present();
+  }
+
+  public image = ""
+
+  public async getPhoto(){
+    const photo = await Plugins.Camera.getPhoto({
+      resultType: CameraResultType.DataUrl
+    });
+    this.image = photo.dataUrl
   }
 }

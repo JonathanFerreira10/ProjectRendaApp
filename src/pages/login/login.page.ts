@@ -3,6 +3,7 @@ import { ModalController, Platform, NavController } from '@ionic/angular';
 import { ModalPage } from './Modals/modal/modal.page';
 import { StorageService, Item } from '../../app/storage.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
