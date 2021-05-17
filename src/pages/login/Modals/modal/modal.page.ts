@@ -60,7 +60,7 @@ export class ModalPage implements OnInit {
     toast.present();
   }
 
-  public image = ""
+  public image = "https://ionicframework.com/docs/demos/api/avatar/avatar.svg"
 
   public async getPhoto(){
     const photo = await Plugins.Camera.getPhoto({
