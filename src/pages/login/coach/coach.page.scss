@@ -1,5 +1,21 @@
+.pagina{
+    width: auto;
+    background-color: rgb(64, 184, 214);
+    height: 35px;
+    margin: 0px;
+    text-align: center;
+    padding: 0px;
+}
+.preto{
+    text-align: center;
+    color: #000000;
+    margin: 5px;
 
+}
 
+.roxo{
+    color: #BA55D3;
+}
 
 .centro{
     text-align: center;
@@ -23,7 +39,7 @@
     padding: 0;
 }
 .card{
-    border: 1px solid grey;
+    border: 0px solid grey;
     text-align: center;
     width: 400px;
     margin-left: auto;
@@ -62,33 +78,60 @@ text-align: center
 
 .carddicas{
 
-padding: 0px;
+padding: 5px;
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 1px;
-margin-top: 4px;
+margin-bottom: 20px;
+margin-top: 3px;
 text-align: center;
-width: 300px;
-height: 250px;
+min-height: 15px;
+max-height: 300px;
 }
 .rolagemdicas{
 
     margin: auto;
+    margin-bottom: auto;
     text-align: center;
     padding: auto;
-    height: 15%;
+    height: 290px;
     overflow-y: scroll;
 }
 .corcardicas{
     color: #e3e7e3;
 }
-.rolagemesquerda{
+
+.swiper-slide {
+    display: block;
+  }
+
+.swiper-slide h2 {
+    margin-top: 1.8rem;
+  }
+
+
+h2{
     margin: auto;
-    text-align: center;
-    padding: auto;
-    height: 15%;
-    overflow-y: scroll;
-    direction: rtl;
-}
+    size: auto;
+    height: auto;
+  }
 
+h1{
+        font-weight: 30;
+        color: var(--ion-color-step-600, #000000);
+  }
+ion-slides {
+    height: 100%;
+  }
+b {
+    color: var(--ion-color-step-600, #000000);
+  }
 
+p {
+    padding: 0 40px;
+    font-size: 15px;
+    color: var(--ion-color-step-600, #60646b);
+  }
+
+p b {
+    color: var(--ion-text-color, #000000);
+  }
