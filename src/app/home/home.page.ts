@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { StorageService, Invoice } from '../storage.service';
-import { Platform } from '@ionic/angular';
+import { Platform, NavController, ModalController } from '@ionic/angular';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { ConfigUserComponent } from './config-user/config-user.component'
 
 @Component({
   selector: 'app-home',
@@ -22,7 +24,7 @@ export class HomePage {
 
   public slidesOptions: any = { slidesPerView: 3, freeModey: true};
 
-  constructor(private storageService: StorageService, private plt: Platform) {
+  constructor(private storageService: StorageService, private plt: Platform, private nav: NavController, public modalController: ModalController) {
     this.plt.ready().then(() => {
       this.loadInvoices();
     });
@@ -33,4 +35,17 @@ export class HomePage {
       this.invoices = invoices;
     });
   }
+
+  async showModal(){
+    console.log("Modal aberto")
+    const modal = await this.modalController.create({
+    component: ConfigUserComponent
+    });
+    modal.present();
+  }
+
+
 }
+
+
+

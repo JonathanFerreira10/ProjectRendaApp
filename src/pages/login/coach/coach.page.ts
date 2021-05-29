@@ -10,6 +10,5 @@ export class CoachPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
+  }  
 }
