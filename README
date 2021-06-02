@@ -10,6 +10,10 @@ JQUERY: npm install @types/jquery(Comando necessário para instalar o jQuery)
 
 import * as $ from 'jquery' (Importar no "App.module")
 
+ionic integrations enable capacitor
+
+ionic capacitor add android
+
 
 INSTRUCTIONS: 
 
