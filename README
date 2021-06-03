@@ -14,6 +14,8 @@ ionic integrations enable capacitor
 
 ionic capacitor add android
 
+Ng-Circle-Progress: npm install ng-circle-progress --save
+
 
 INSTRUCTIONS: 
 
