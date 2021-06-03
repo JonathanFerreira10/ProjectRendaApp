@@ -28,7 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('../pages/login/coach/coach.module').then( m => m.CoachPageModule)
   },
   {
-    path: 'cadastrar-fatura',
+    path: 'cadastrar-fatura', //Para puxar o nome do usuário deve ser usado /:name/cadastrar-fatura porém, precisa ser alterado na home a parte do redirecionamento. 
     loadChildren: () => import('../pages/login/cadastrar-fatura/cadastrar-fatura.module').then( m => m.CadastrarFaturaPageModule)
   },
   {

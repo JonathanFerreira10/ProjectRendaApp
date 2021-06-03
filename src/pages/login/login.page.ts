@@ -41,7 +41,7 @@ export class LoginPage implements OnInit {
     });
   }
 
-  pushPage(){
-    this.nav.navigateForward(`/home/${this.items[0].name}`);
-  }
+  // pushPage(){
+  //   this.nav.navigateForward(`/home/${this.items[0].name}`);
+  // }
 }

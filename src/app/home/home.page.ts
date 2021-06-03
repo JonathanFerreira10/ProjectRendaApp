@@ -14,7 +14,7 @@ export class HomePage {
   invoices: Invoice[] = [];
   
   public options: Array<any> = [
-    { name: 'Criar Fatura', url: "/cadastrar-fatura" },
+    { name: 'Criar Fatura', url: "/cadastrar-fatura"},
     { name: 'Visualizar Fatura', url: "/visualizar-fatura"},
     { name: 'Coach', url: "/coach" },
     { name: 'Sair', url: "/login" },
