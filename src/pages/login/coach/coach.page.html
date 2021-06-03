@@ -10,22 +10,22 @@
 
 
 <ion-content>
-
+  
   <ion-row >
   <ion-tabs class="fixador">
     <ion-tab-bar >
-      <ion-row *ngFor="let i of [0,1,2,3]">
-      <ion-col size="auto">
-          <ion-card  color= "#d7d8da"  class="margem">
-              <b class="centro" >UAM982.2 <ion-icon color="success" size="40px" name="caret-up-outline"></ion-icon> +1.956% </b>
-          </ion-card>
-      </ion-col>
-      </ion-row>
+      <ion-row>
+        <ion-col size="auto">
+            <ion-card class="margem">
+              <iframe src="https://br.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&hideTitle=true&pairs=1,3,2,4,1516,10458,1089809" width="100%" height="600" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Desenvolvido por <a href="https://br.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=LIVE_CURRENCY_X_RATES&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>
+            </ion-card>
+        </ion-col>
+        </ion-row>
     </ion-tab-bar>
   </ion-tabs> 
 </ion-row>
   
-  <ion-slides [options]="{slidesPerView: 'auto'}" pager="true">
+  <ion-slides [options]="{slidesPerView: 'auto'}">
     <ion-slide>
       <ion-row>
         <ion-col>
@@ -36,6 +36,7 @@
       <b ><strong>Estamos aqui para ajuda-lo!</strong>    </b>
       <p>As melhores noticias sobre o mercado financeiro você encontra aqui</p>
   </div>
+  
 
 <h2 class="rolagem">
   <ion-row  size="auto" *ngFor="let i of [0,1,2,3,4,5,6,7,8]">

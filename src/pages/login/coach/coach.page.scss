@@ -23,7 +23,7 @@
 .margem{
     height: auto;
     display: block;
-    padding: 10px;
+    padding: auto;
     margin: auto;
 }
 .ml-auto{
@@ -39,16 +39,20 @@
     margin: 0;
     padding: 0;
 }
+.branco{
+    color: #ffffff;
+}
 .card{
     border: 0.5px solid grey;
     text-align: center;
     width: 400px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: -1px;
+    margin-bottom: 5px;
     margin-top: 4px;
     height: 354px;
-    padding: 0;
+    padding: 5px;
+    padding-bottom: 5px;
     
 
 }
@@ -66,7 +70,7 @@
     margin: auto;
     text-align: center;
     padding: auto;
-    height: 64%;
+    height: 70%;
     overflow-y: scroll;
 }
 ::-webkit-scrollbar{

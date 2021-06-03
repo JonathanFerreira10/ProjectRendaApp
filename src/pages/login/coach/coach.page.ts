@@ -15,7 +15,7 @@ export class CoachPage implements OnInit {
 
   async showAlert() {
     const MyAlert = await this.alertCtrl.create({
-      message: 'Nossa equipe sempre mantém este campo atualizado, para que voce possua as melhores dicas. Desenvolvida por uma equipe focada em sua satisfação o campo dicas inteligentes tem seu valor e seguindo a dedo verá seus resultados ;)',
+      message: 'Nossa equipe sempre mantém este campo atualizado, para que voce possua as melhores dicas. Desenvolvida por uma equipe focada em sua satisfação o campo dicas inteligentes tem seu valor e seguindo à risca verá seus resultados ;)',
       buttons: ['OK!']
     });
  MyAlert.present();
