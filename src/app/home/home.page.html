@@ -17,19 +17,26 @@
     </ion-header> -->
     <div class="ion-padding">
       <ion-card>
-        <ion-card-header>
-          Bar Chart - Renda Disponível
-        </ion-card-header>
         <ion-card-content>
-          <h2>Renda Atual: 1500ex</h2>
-          <ion-progress-bar value="{{1500/1500}}" color="primary"> </ion-progress-bar>
-          <h2>Gastos e Faturas</h2>
-          <ion-progress-bar value="{{1200/1500}}" color="warning"> </ion-progress-bar>
-          <h2>Saldo Disponível</h2>
-          <ion-progress-bar value="{{300/1500}}" color="success"></ion-progress-bar>
+          <ion-card-header>
+            <h2><strong>Saldo Disponível</strong></h2>
+          </ion-card-header>
+          <ion-row class="ion-justify-content-center">
+            <circle-progress
+            [percent]="85"
+            [radius]="60"
+            [outerStrokeWidth]="12"
+            [innerStrokeWidth]="5"
+            [outerStrokeColor]="'#78C000'"
+            [innerStrokeColor]="'#C7E596'"
+            [animation]="true"
+            [animationDuration]="300"
+            ></circle-progress>
+          </ion-row>
         </ion-card-content>
       </ion-card>
     </div>
+
   </div>
 
   <!-- To do - Gabriel, essa parte do código acredito que tenha que mostrar os vencimentos  próximos/pertos não?  -->
