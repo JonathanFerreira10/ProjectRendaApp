@@ -10,31 +10,25 @@
 
 
 <ion-content>
-
-  <ion-row cla>
+  
+  <ion-row >
   <ion-tabs class="fixador">
     <ion-tab-bar >
-      <ion-row *ngFor="let i of [0,1,2,3,4,5,6,7,8]">
-      <ion-col size="auto">
-          <ion-card  color= "#d7d8da"  class="margem">
-              <b class="centro" >UAM982.2 <ion-icon color="success" size="40px" name="caret-up-outline"></ion-icon> +1.956% </b>
-          </ion-card>
-      </ion-col>
-      </ion-row>
+      <ion-row>
+        <ion-col size="auto">
+            <ion-card class="margem">
+              <iframe src="https://br.widgets.investing.com/live-currency-cross-rates?theme=darkTheme&hideTitle=true&pairs=1,3,2,4,1516,10458,1089809" width="100%" height="600" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Desenvolvido por <a href="https://br.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=LIVE_CURRENCY_X_RATES&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>
+            </ion-card>
+        </ion-col>
+        </ion-row>
     </ion-tab-bar>
   </ion-tabs> 
 </ion-row>
   
-  <ion-slides [options]="{slidesPerView: 'auto'}" pager="true">
+  <ion-slides [options]="{slidesPerView: 'auto'}">
     <ion-slide>
       <ion-row>
         <ion-col>
-          <ion-card class="roxo" class="pagina">
-            <ion-card-title class="preto">
-              <ion-icon name="newspaper-outline"></ion-icon>
-              Noticias 
-            </ion-card-title>
-           </ion-card>
     </ion-col>
     </ion-row>
   <div>
@@ -42,6 +36,7 @@
       <b ><strong>Estamos aqui para ajuda-lo!</strong>    </b>
       <p>As melhores noticias sobre o mercado financeiro você encontra aqui</p>
   </div>
+  
 
 <h2 class="rolagem">
   <ion-row  size="auto" *ngFor="let i of [0,1,2,3,4,5,6,7,8]">
@@ -96,12 +91,6 @@
   <ion-slide>
     <ion-row>
       <ion-col>
-        <ion-card class="roxo" class="pagina">
-          <ion-card-title class="preto">
-            <ion-icon name="cash-outline"></ion-icon>
-           Dicas 
-          </ion-card-title>
-         </ion-card>
   </ion-col>
   </ion-row>
 <div>
@@ -113,17 +102,58 @@
 
 <ion-row>
   <ion-col>
-    <ion-button color="success" class="centro">
+    <ion-button (click)="showAlert()" color="success" class="centro" >
       <ion-icon name="build-outline"></ion-icon>
       Inteligentes
  </ion-button>
+ 
  <h2 class="rolagemdicas">
-  <ion-card size="auto" class="carddicas" color= "#EBEBEB" *ngFor="let i of [0,1,2,3,4,5,6]" scroll-bar="65%" >
+  <ion-card size="auto" class="carddicas" color= "#EBEBEB" scroll-bar="65%" >
     <ion-card-header>
-      <b>TITULO DA DICA</b>
+      <b>Economize</b>
     </ion-card-header>
     <ion-card-content>
-      <b>O texto se encontra aqui</b>
+      <b>A certos momentos que talvez uma escolha boa venha a acalhar, quando houver a possibilidade de economizar nao pense em uma oportinidade perdida, e sim e uma possbilidade de aproveitar futuramente. Sabe aquele momento que é convidado a viajar ou sair e nao possui a grana suficiente. Talvez economizando um pouco antes isso nao venha acontecer.</b>
+    </ion-card-content>
+  </ion-card>
+  <ion-card size="auto" class="carddicas" color= "#EBEBEB" scroll-bar="65%" >
+    <ion-card-header>
+      <b>Invista</b>
+    </ion-card-header>
+    <ion-card-content>
+      <b>Muitos pensam que investir é açoes ou mercado financeiro, mas nao a inumeras formas diferentes de investir. Voce sabia que o ouro aumenta cada vez mais devido a sua escassez, muitas pessoas investem em joias para que haja uma rentabilidade futura. Então procure formas alternativas de investir seu rico dinheiro.</b>
+    </ion-card-content>
+  </ion-card>
+  <ion-card size="auto" class="carddicas" color= "#EBEBEB" scroll-bar="65%" >
+    <ion-card-header>
+      <b>PROMOÇOES</b>
+    </ion-card-header>
+    <ion-card-content>
+      <b>Vivemos em um mercado no qual a uma grande concorrencia entre as empresas e isso gera oportunidades para nós clientes, Ja ouviu falar em cashback? Ou desconto por operadora? Procure formas alternativas de retorno financeiro a você, sei que irá se surpreender.</b>
+    </ion-card-content>
+  </ion-card>
+  <ion-card size="auto" class="carddicas" color= "#EBEBEB" scroll-bar="65%" >
+    <ion-card-header>
+      <b>CUIDADO COM GOLPES!</b>
+    </ion-card-header>
+    <ion-card-content>
+      <b>Em meio a um mundo economico a pessoas que usufruem das oportunidades ou falhas para aplicar golpes. Entao reforçamos tome muito cuidado, nao faça transferencias a pessoas desconhecidas, utilize plataformas de compras online no qual lhe garanta uma garantia de compra e sempre busque saber seus direitos como consumidor. Saiba se defender e atacar quando necessario ;)</b>
+    </ion-card-content>
+  </ion-card>
+  <ion-card size="auto" class="carddicas" color= "#EBEBEB" scroll-bar="65%" >
+    <ion-card-header>
+      <b>PREPARE-SE</b>
+    </ion-card-header>
+    <ion-card-content>
+      <b>Guarde um dinheiro, pense em planos futuros. Tenha objetivos isso irá leva-lo a busca-los. E principalmente nao desista, seus sonhos são apenas seus e voce é o unico que pode alcança-los.</b>
+    </ion-card-content>
+  </ion-card>
+  <ion-card size="auto" class="carddicas" color= "#EBEBEB" scroll-bar="65%" >
+    <ion-card-header>
+      <b>ORGANIZAÇÃO</b>
+    </ion-card-header>
+    <ion-card-content>
+      <b>Sempre tenha seus custos perto de voce e se organize, isso ira ajuda-lo sempre que precisar e nao esqueça parcelamentos ou dividas ativas elas precisam ser prioridades no momento pode aparecer como algo ruim mas seguindo as dicas alteriores elas nao irao aparecer.</b>
     </ion-card-content>
   </ion-card>
   </h2>
