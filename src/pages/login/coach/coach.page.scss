@@ -21,9 +21,10 @@
     text-align: center;
 }
 .margem{
-    margin-left: auto;
-    margin-right: auto;
+    height: auto;
     display: block;
+    padding: 10px;
+    margin: auto;
 }
 .ml-auto{
     margin-left: auto;
@@ -39,7 +40,7 @@
     padding: 0;
 }
 .card{
-    border: 0px solid grey;
+    border: 0.5px solid grey;
     text-align: center;
     width: 400px;
     margin-left: auto;
@@ -49,7 +50,18 @@
     height: 354px;
     padding: 0;
     
+
 }
+.carddicas{
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 3px;
+    text-align: center;
+    min-height: 15px;
+    max-height: 300px;
+    }
 .rolagem{
     margin: auto;
     text-align: center;
@@ -76,24 +88,12 @@ width: 500px;
 text-align: center
 }
 
-.carddicas{
-
-padding: 5px;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 20px;
-margin-top: 3px;
-text-align: center;
-min-height: 15px;
-max-height: 300px;
-}
 .rolagemdicas{
 
     margin: auto;
-    margin-bottom: auto;
     text-align: center;
     padding: auto;
-    height: 290px;
+    height: 35%;
     overflow-y: scroll;
 }
 .corcardicas{
