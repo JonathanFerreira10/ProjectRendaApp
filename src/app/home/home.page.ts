@@ -10,6 +10,7 @@ import { ConfigUserComponent } from './config-user/config-user.component'
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  today
 
   invoices: Invoice[] = [];
   
@@ -25,6 +26,9 @@ export class HomePage {
   public slidesOptions: any = { slidesPerView: 3, freeModey: true};
 
   constructor(private storageService: StorageService, private plt: Platform, private nav: NavController, public modalController: ModalController) {
+    // get data de hoje
+    this.today = new Date().toISOString();
+
     this.plt.ready().then(() => {
       this.loadInvoices();
     });

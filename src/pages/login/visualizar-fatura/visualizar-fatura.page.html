@@ -17,11 +17,15 @@
           <ion-col class="ml-auto">
             <ion-icon name="trash-outline" color = "danger" (click) = "deleteInvoicee()"></ion-icon>
             <ion-icon name="create-outline"></ion-icon>
+            <!-- icones de status da fatura -->
+            <ion-icon style="margin-left: 10px;" *ngIf="invoice.dueDate < today" name="alert" color="danger"></ion-icon>
+            <ion-icon style="margin-left: 10px;" *ngIf="invoice.dueDate > today && invoice.wasPaid == false" name="time" color="warning"></ion-icon>
+            <ion-icon style="margin-left: 10px;" *ngIf="invoice.wasPaid == true" name="checkmark-circle" color="success"></ion-icon>
           </ion-col>
         </ion-card-title>
         <ion-card-subtitle *ngIf = "invoice.dueDate; else semVencimento"> Vencimento: {{invoice.dueDate | date }}</ion-card-subtitle>  
         <ng-template #semVencimento>Sem vencimento</ng-template>   
-        <ng-template #semTitulo>Sem Titulo e valor</ng-template>        
+        <ng-template #semTitulo>Sem Titulo e valor</ng-template>
       </ion-card-header>
     </ion-card>
 </ion-content>

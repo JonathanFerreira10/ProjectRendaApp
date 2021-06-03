@@ -35,11 +35,11 @@
           <ion-checkbox slot="end" [(ngModel)]="newInv.monthly"></ion-checkbox>
         </ion-item>
         <ion-item *ngIf="newInv.monthly == true">
-          <ion-datetime displayFormat="MM DD" [(ngModel)]="newInv.renewalDate" placeholder="selecione o dia da renovação (MM/DD)"></ion-datetime>
+          <ion-datetime displayFormat="DD" [(ngModel)]="newInv.renewalDate" placeholder="selecione o dia da renovação (DD)"></ion-datetime>
         </ion-item>
         <ion-item>
           <ion-label>Vencimento: </ion-label>
-          <ion-datetime [min]="today" [(ngModel)]="newInv.dueDate" placeholder="selecione a data"></ion-datetime>
+          <ion-datetime [(ngModel)]="newInv.dueDate" placeholder="selecione a data"></ion-datetime>
         </ion-item>
       </ion-col>
     </ion-row>

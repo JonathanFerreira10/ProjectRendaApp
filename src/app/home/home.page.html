@@ -36,10 +36,8 @@
         </ion-card-content>
       </ion-card>
     </div>
-
   </div>
 
-  <!-- To do - Gabriel, essa parte do código acredito que tenha que mostrar os vencimentos  próximos/pertos não?  -->
   <ion-card>
     <ion-title id="preview">
       <strong>ÚTILMOS GASTOS</strong>
@@ -51,15 +49,14 @@
           <ion-text color="secondary">
             <p>{{invoice.value}}</p>
           </ion-text>
-          <!-- <ion-text>
-          <p>{{invoice.dueDate}}</p>
-        </ion-text> -->
+          <ion-text *ngIf="invoice.dueDate < today" color="danger">
+            <p>vencida</p>
+          </ion-text>
         </ion-label>
       </ion-item>
     </ion-item-sliding>
   </ion-card>
 </ion-content>
-
 
 <ion-toolbar>
   <ion-slides [options]="slidesOptions">

@@ -10,10 +10,15 @@ import { Storage } from '@ionic/storage-angular';
 
 
 export class VisualizarFaturaPage implements OnInit {
+  today
+
   invoices: Invoice[] = [];
   newInv: Invoice = <Invoice>{};
   
-  constructor(private storageService: StorageService, private storage: Storage) { 
+  constructor(private storageService: StorageService, private storage: Storage) {
+    // get data de hoje
+    this.today = new Date().toISOString();
+    
     this.loadInvoices();
   }
 
