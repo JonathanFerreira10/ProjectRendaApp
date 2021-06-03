@@ -18,7 +18,7 @@
         <ion-col col-12 class="ion-text-center">
           <ion-item class="profile-item" *ngFor="let item of items" style="border-radius: 10px;" color="success">
             <ion-avatar slot="start">
-              <img src="https://firebasestorage.googleapis.com/v0/b/imobzi-app-production.appspot.com/o/users%2F8SwANwvDjaRXImIcFY8WjahEdFs2%2Fprofile-photo?alt=media&token=0109cd8b-50bf-475f-9479-5cc05e832971">
+              <img [src] = "item.imag">
             </ion-avatar>
             <a (click)="pushPage()">{{item.name}}</a>
           </ion-item>

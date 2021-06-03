@@ -4,7 +4,7 @@ import { Storage } from '@ionic/storage-angular';
 export interface Item {
   id: number,
   name: string,
-  image: string
+  imag: string
   income: number,
   modified: number
 }

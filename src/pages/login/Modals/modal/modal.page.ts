@@ -67,5 +67,7 @@ export class ModalPage implements OnInit {
       resultType: CameraResultType.DataUrl
     });
     this.image = photo.dataUrl
+    this.newItem.imag = this.image
+    console.log(this.newItem.imag)
   }
 }
