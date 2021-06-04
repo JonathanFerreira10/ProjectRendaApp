@@ -32,6 +32,7 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+    this.loadItems();
     console.log(this.newItem.imag);
   }
 

@@ -3,7 +3,7 @@
     <ion-title>
       <strong>Dashboard</strong>
     </ion-title>
-    <ion-icon slot="end" style="color: #222428;" name="settings-sharp" (click) = "showModal()"></ion-icon>
+    <ion-icon class="configIcon" slot="end" name="settings-sharp" (click) = "showModal()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -19,8 +19,14 @@
       <ion-card>
         <ion-card-content>
           <ion-card-header>
+            <ion-icon name="cash"></ion-icon>
             <h2><strong>Saldo Disponível</strong></h2>
           </ion-card-header>
+
+          <!-- O código abaixo puxa as informações do usuário ainda sem separação -->
+          <!-- <div class="container" *ngFor="let item of items">
+            <span>{{ item.income }}</span>
+          </div> -->
           <ion-row class="ion-justify-content-center">
             <circle-progress
             [percent]="85"
@@ -47,10 +53,10 @@
         <ion-label text-wrap>
           <h3>{{invoice.title}}</h3>
           <ion-text color="secondary">
-            <p>{{invoice.value}}</p>
+            <p>{{invoice.value | currency:'BRL':true:'1.0-0'}}</p>
           </ion-text>
           <ion-text *ngIf="invoice.dueDate < today" color="danger">
-            <p>vencida</p>
+            <p>Vencida</p>
           </ion-text>
         </ion-label>
       </ion-item>
@@ -61,10 +67,7 @@
 <ion-toolbar>
   <ion-slides [options]="slidesOptions">
     <ion-slide *ngFor="let option of options" [routerLink]="option.url">
-      <ion-icon  *ngIf="option.name === 'Criar Fatura'" name="clipboard-outline"></ion-icon>
-      <ion-icon *ngIf="option.name === 'Visualizar Fatura'" name ="document-outline"></ion-icon>
-      <ion-icon *ngIf="option.name === 'Coach'" name="newspaper-outline"></ion-icon>
-      <ion-icon *ngIf="option.name === 'Sair'" name="power"></ion-icon>
+      <ion-icon [name]="option.icon"></ion-icon>
       <div class="container">
         <span>{{ option.name }}</span>
       </div>
