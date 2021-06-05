@@ -37,6 +37,11 @@ export class VisualizarFaturaPage implements OnInit {
       this.loadInvoices()
     })
   }
+  //precisa verificar esse metodo. Ideia fazer um for para rodar o indice do vetor -- Jonathan
+  pago(){
+    this.invoices[0].wasPaid = true;
+    console.log(this.invoices[0].wasPaid)
+  }
   
   }
 
