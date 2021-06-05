@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StorageService, Invoice, Item } from '../storage.service';
 import { Platform, NavController, ModalController, IonItemSliding } from '@ionic/angular';
+
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { ConfigUserComponent } from './config-user/config-user.component'
 
@@ -17,10 +18,10 @@ export class HomePage {
   newItem: Item = <Item>{};
   
   public options: Array<any> = [
-    { name: 'Criar Fatura', url: "/cadastrar-fatura"},
-    { name: 'Visualizar Fatura', url: "/visualizar-fatura"},
-    { name: 'Coach', url: "/coach" },
-    { name: 'Sair', url: "/login" },
+    { name: 'Criar Fatura', url: "/cadastrar-fatura", icon: 'clipboard-outline'},
+    { name: 'Visualizar Fatura', url: "/visualizar-fatura", icon: 'document-outline'},
+    { name: 'Coach', url: "/coach", icon: 'newspaper-outline' },
+    { name: 'Sair', url: "/login", icon: 'power' },
     // deixei somente "Coach" pois "Coach de Investimento" estava aumentando
     // o tamanho da caixa dele no slide.
   ];
@@ -43,6 +44,8 @@ export class HomePage {
 
   }
 
+
+
   loadInvoices(){
     this.storageService.getInvoices().then(invoices => {
       this.invoices = invoices;
@@ -64,9 +67,11 @@ export class HomePage {
     modal.present();
   }
 
+
   
 
   renda = 75.2
+
 
 
 }

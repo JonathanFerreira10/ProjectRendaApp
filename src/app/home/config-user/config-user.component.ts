@@ -15,7 +15,6 @@ export class ConfigUserComponent implements OnInit {
 
   public image = "https://ionicframework.com/docs/demos/api/avatar/avatar.svg"
 
-
   async close(){
     console.log("Modal Fechado")
    

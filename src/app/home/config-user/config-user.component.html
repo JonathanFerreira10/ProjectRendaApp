@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="success">
-    <ion-icon class="ion-float-left" style = "font-size: 30px;" name="arrow-back-circle-outline" (click)="close()"></ion-icon>
+    <ion-icon class="ion-float-left arrow" name="arrow-back" (click)="close()"></ion-icon>
     <ion-title><strong>Configurações</strong></ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,29 +14,26 @@
 
   <ion-list>
     <ion-item>
-      <ion-label>
-        Night
+      <ion-label class="dark-mode">
+        Modo Noturno
         <ion-icon name="contrast-outline"></ion-icon>
       </ion-label>
+
+      <label class="switch ion-float-right">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
     </ion-item>
 
     <ion-item>
       <ion-label>
-        xxx
-        
+        Alterar nome
       </ion-label>
     </ion-item>
 
     <ion-item>
       <ion-label>
-        xxx
-        
-      </ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>
-        xxx
+        Excluir usuário
       </ion-label>
     </ion-item>
   </ion-list>
