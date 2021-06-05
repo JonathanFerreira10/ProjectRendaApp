@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { StorageService, Invoice } from '../storage.service';
-import { Platform, NavController, ModalController } from '@ionic/angular';
+import { StorageService, Invoice, Item } from '../storage.service';
+import { Platform, NavController, ModalController, IonItemSliding } from '@ionic/angular';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { ConfigUserComponent } from './config-user/config-user.component'
 
@@ -13,6 +13,8 @@ export class HomePage {
   today
 
   invoices: Invoice[] = [];
+  items: Item[] = [];
+  newItem: Item = <Item>{};
   
   public options: Array<any> = [
     { name: 'Criar Fatura', url: "/cadastrar-fatura"},
@@ -31,7 +33,14 @@ export class HomePage {
 
     this.plt.ready().then(() => {
       this.loadInvoices();
+      this.loadItems();
     });
+    
+  }
+  ngOnInit() {
+
+    console.log(this.newItem.income)
+
   }
 
   loadInvoices(){
@@ -40,6 +49,13 @@ export class HomePage {
     });
   }
 
+  loadItems(){
+    this.storageService.getItems().then(items => {
+      this.items = items;
+    });
+  }
+  
+
   async showModal(){
     console.log("Modal aberto")
     const modal = await this.modalController.create({
@@ -47,6 +63,10 @@ export class HomePage {
     });
     modal.present();
   }
+
+  
+
+  renda = 75.2
 
 
 }

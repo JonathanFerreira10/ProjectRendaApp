@@ -16,11 +16,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     IonicModule,
     HomePageRoutingModule,
     NgCircleProgressModule.forRoot({
-      "radius": 80,
-      "outerStrokeWidth": 10,
-      "innerStrokeWidth": 5,
-      "showBackground": false,
-      "startFromZero": false,
+
      })
   ],
   declarations: [HomePage],

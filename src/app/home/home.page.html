@@ -3,7 +3,7 @@
     <ion-title>
       <strong>Dashboard</strong>
     </ion-title>
-    <ion-icon slot="end" style="color: #222428;" name="settings-sharp" (click) = "showModal()"></ion-icon>
+    <ion-icon slot="end" class="ion-padding" style="color: #222428;" name="settings-sharp" (click) = "showModal()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
@@ -16,23 +16,49 @@
       </ion-toolbar>
     </ion-header> -->
     <div class="ion-padding">
+      <h2><strong>Bem Vindo, [user] !</strong></h2>
       <ion-card>
         <ion-card-content>
-          <ion-card-header>
+          <ion-card-header class="ion-no-padding">
             <h2><strong>Saldo Disponível</strong></h2>
+            
           </ion-card-header>
-          <ion-row class="ion-justify-content-center">
-            <circle-progress
-            [percent]="85"
-            [radius]="60"
-            [outerStrokeWidth]="12"
-            [innerStrokeWidth]="5"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="300"
-            ></circle-progress>
-          </ion-row>
+          
+            <ion-slides class="fundograph">
+              
+                <circle-progress
+                [percent]= "renda"
+                [radius]="60"
+                [title]="'5000' | currency "
+                [titleFontSize]= "'15'"
+                [titleColor]="'#000000'"
+                [subtitle]="'Saldo'"
+                [subtitleColor]="'#000000'"
+                [showUnits]="false"
+                [outerStrokeWidth]="12"
+                [innerStrokeWidth]="2"
+                [outerStrokeColor]="'#78C000'"
+                [innerStrokeColor]="'#C7E596'"
+                [animation]="true"
+                [animationDuration]="300"
+              
+                ></circle-progress>
+              
+              <circle-progress
+              [percent]="85"
+              [radius]="60"
+              [showTitle]="false"
+              [showSubtitle]="false"
+              [showUnits]="false"
+              [showInnerStroke]="false"
+              [outerStrokeWidth]="12"
+              [innerStrokeWidth]="5"
+              [outerStrokeColor]="'#da0101'"
+              [animation]="true"
+              [animationDuration]="300"
+              ></circle-progress>
+            </ion-slides>
+          
         </ion-card-content>
       </ion-card>
     </div>
