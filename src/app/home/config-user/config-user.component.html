@@ -16,7 +16,7 @@
     <ion-item>
       <ion-label class="dark-mode">
         Modo Noturno
-        <ion-icon name="contrast-outline"></ion-icon>
+        <ion-icon name="contrast-outline" class="temaicon"></ion-icon>
       </ion-label>
 
       <label class="switch ion-float-right">
@@ -33,9 +33,17 @@
 
     <ion-item>
       <ion-label>
-        Excluir usuário
+        Exibir ajuda
       </ion-label>
+      <label class="switch ion-float-right">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
     </ion-item>
   </ion-list>
+
+  <div class="ion-text-center">
+    <ion-button (click)="delConta()" color="danger"> Deletar Conta </ion-button>
+  </div>
 
 </ion-content>
