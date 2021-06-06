@@ -16,11 +16,11 @@
           <ion-card-header class="ion-no-padding">
             <h2><strong>Saldo Disponível</strong></h2>
           </ion-card-header>
-          <ion-slides class="fundograph">
+          <ion-slides class="fundograph" *ngFor="let item of items">
             <circle-progress
-            [percent]= "renda"
+            [percent]= "item.income"
             [radius]="60"
-            [title]="'5000' | currency "
+            [title]="item.income"
             [titleFontSize]= "'15'"
             [titleColor]="'#000000'"
             [subtitle]="'Saldo'"

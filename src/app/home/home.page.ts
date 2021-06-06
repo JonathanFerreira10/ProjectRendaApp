@@ -3,7 +3,7 @@ import { StorageService, Invoice, Item } from '../storage.service';
 import { Platform, NavController, ModalController, IonItemSliding } from '@ionic/angular';
 
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
-import { ConfigUserComponent } from './config-user/config-user.component'
+import { ConfigUserPage } from './config-user/config-user.page'
 
 @Component({
   selector: 'app-home',
@@ -64,7 +64,7 @@ export class HomePage {
   async showModal(){
     console.log("Modal aberto")
     const modal = await this.modalController.create({
-    component: ConfigUserComponent
+    component: ConfigUserPage
     });
     modal.present();
   }

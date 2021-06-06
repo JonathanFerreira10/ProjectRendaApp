@@ -68,6 +68,7 @@ export class ModalPage implements OnInit {
     });
     this.image = photo.dataUrl
     this.newItem.imag = this.image
-    console.log(this.newItem.imag)
+    this.storageService.updateItem(this.items[0])
+    console.log(this.items)
   }
 }
