@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ModalController, NavController, LoadingController, ToastController } from '@ionic/angular';
+import { StorageService, Item } from '../../storage.service';
 
 @Component({
   selector: 'app-config-user',
@@ -8,8 +9,14 @@ import { ModalController, NavController, LoadingController, ToastController } fr
 })
 export class ConfigUserComponent implements OnInit {
   private loading;
+   checkbox
+  items: Item[] = [];
+  newItem: Item = <Item>{};
 
-  constructor(public modalController: ModalController, private navCtrl: NavController, private loadingCtrl: LoadingController) { }
+  constructor(public modalController: ModalController, private navCtrl: NavController, private loadingCtrl: LoadingController, private storageService: StorageService) {
+      this.loadItems();
+
+   }
 
   ngOnInit() {}
 
@@ -28,5 +35,15 @@ export class ConfigUserComponent implements OnInit {
       window.location.reload(); 
     },1500)
   }
+
+  loadItems(){
+    this.storageService.getItems().then(items => {
+      this.items = items;
+    });
+  }
+
+
+
+
 
 }

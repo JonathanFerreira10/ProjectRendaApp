@@ -39,6 +39,14 @@ const routes: Routes = [
     path: 'visualizar-fatura',
     loadChildren: () => import('../pages/login/visualizar-fatura/visualizar-fatura.module').then( m => m.VisualizarFaturaPageModule)
   },
+  {
+    path: 'edit-fatura/:id',
+    loadChildren: () => import('../pages/login/visualizar-fatura/edit-fatura/edit-fatura.module').then( m => m.EditFaturaPageModule)
+  },
+  
+
+
+
 
 
 
