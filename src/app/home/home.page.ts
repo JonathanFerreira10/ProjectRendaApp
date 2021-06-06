@@ -11,7 +11,9 @@ import { ConfigUserComponent } from './config-user/config-user.component'
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  today
+  today;
+
+  username : string;
 
   invoices: Invoice[] = [];
   items: Item[] = [];
@@ -38,13 +40,13 @@ export class HomePage {
     });
     
   }
+
   ngOnInit() {
-
-    console.log(this.newItem.income)
-
+    this.storageService.getItems().then(items => {
+      this.items = items;
+      this.username = this.items[0].name;
+    });
   }
-
-
 
   loadInvoices(){
     this.storageService.getInvoices().then(invoices => {

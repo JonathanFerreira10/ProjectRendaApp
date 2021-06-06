@@ -4,12 +4,10 @@ import { Storage } from '@ionic/storage-angular';
 export interface Item {
   id: number,
   name: string,
-  imag: string
-  income: number,
-  modified: number
+  imag: string,
+  modified: number,
+  income: number
 }
-
-// criar interface qualquer compra
 
 export interface Invoice {
   id: number,
@@ -17,12 +15,13 @@ export interface Invoice {
   value: number,
   modified: number,
   wasPaid: boolean,
-  monthly: boolean, // New: saber se é recorrente
-  renewalDay: number, // New: dia da renovação
-  paymentDate: number, // New: dia do pagamento
-  dueDate: number, // New: dia da expiração
-  onwerID: number // New: ID do usuario proprietario
+  monthly: boolean,
+  renewalDay: number,
+  paymentDate: number,
+  dueDate: number
 }
+
+// criar interface para compras simples
 
 const ITEMS_KEY = "my-items";
 const INVC_KEY = "my-invoices";

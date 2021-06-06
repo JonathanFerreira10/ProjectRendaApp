@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar class="ion-text-center" color="success">
-    <img src="assets/logo.png">
+    <img class="logo" src="assets/logo.png">
   </ion-toolbar>
 </ion-header>
 
@@ -12,24 +12,25 @@
         class="shape-fill"></path>
     </svg>
     
-
-    <!-- Lista de perfis -->
     <ion-grid>
+      <!-- Card do perfil -->
       <ion-row justify-content-center align-items-end style="height:100%;">
         <ion-col col-12 class="ion-text-center">
-          <ion-item class="profile-item" *ngFor="let item of items" style="border-radius: 10px;" color="success">
-            <ion-avatar slot="start">
-              <img [src] = "item.imag">
-            </ion-avatar>
-            <a [routerLink] = "['/home', item.name]">{{item.name}}</a>
-          </ion-item>
+            <ion-card class="prof-card" *ngFor="let item of items">
+              <ion-card-content>
+                <a style="text-decoration: none;" [routerLink] = "['/home', item.name]"><img class="prof-img" [src] = "item.imag"></a>
+                <ion-card-header style="margin: 20px auto auto" class="ion-no-padding">
+                  <a style="text-decoration: none;" [routerLink] = "['/home', item.name]"><h1><b>{{item.name}}</b></h1></a>
+                </ion-card-header>
+              </ion-card-content>
+            </ion-card>
         </ion-col>
       </ion-row>
 
-      <!-- Botão de cadastro -->
-      <ion-row justify-content-center align-items-end style="height:100%;">
+      <!-- Botão de cadastro (permite apenas um usuário)-->
+      <ion-row *ngIf="trackSign === true" justify-content-center align-items-end style="height:100%;">
         <ion-col col-12 class="ion-text-center">
-          <ion-button class="ion-color ion-color-success" fill="outline" (click)="showModal()"><b>Cadastre-se</b>
+          <ion-button style="margin-top: 50px;" class="ion-color ion-color-success" fill="outline" (click)="showModal()"><b>Cadastre-se</b>
           </ion-button>
         </ion-col>
       </ion-row>
