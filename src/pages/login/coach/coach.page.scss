@@ -43,7 +43,7 @@
     color: #ffffff;
 }
 .card{
-    border: 0.5px solid grey;
+    // border: 0.5px solid grey;
     text-align: center;
     width: 400px;
     margin-left: auto;
@@ -53,19 +53,23 @@
     height: 354px;
     padding: 5px;
     padding-bottom: 5px;
-    
-
+    padding-bottom: 5px;
+    margin: 18px;
+    background-color: #ececec;
 }
+
 .carddicas{
 
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 20px;
     margin-top: 3px;
     text-align: center;
     min-height: 15px;
     max-height: 300px;
-    }
+    border-top: 8px solid #2dd36f;
+}
+
 .rolagem{
     margin: auto;
     text-align: center;
@@ -143,4 +147,48 @@ p b {
 .ion{
     font-size: 32px;
     margin-right: 6px;
+}
+
+.tips {
+    border-top: 6px solid #2dd36f;
+}
+
+// DICAS - INICIO
+.title {
+    font-size: 22px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content {
+    font-size: 16px;
+    text-align: left;
+    font-weight: unset;
+}
+// DICAS - FIM
+
+.card-title {   
+    background-color: #2dd36f;
+    padding: 5px;
+    border-radius: 10px;
+
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+}
+
+.card-content {
+    margin-top: 20px;
+}
+
+.cover-photo {
+    width: 40vh;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.logo-company {
+    position: absolute;
 }

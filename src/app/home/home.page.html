@@ -57,7 +57,7 @@
       <strong>ÚTILMOS GASTOS</strong>
     </ion-title>
     <ion-item-sliding *ngFor="let invoice of invoices">
-      <ion-item>
+      <ion-item *ngIf="invoice.wasPaid">
         <ion-label text-wrap>
           <h3>{{invoice.title}}</h3>
           <ion-text color="secondary">
