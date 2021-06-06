@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, NavController, LoadingController, ToastController } from '@ionic/angular';
 import { StorageService, Item } from '../../storage.service'
 import {Plugins, CameraResultType, CameraSource} from '@capacitor/core'
+import { ModalPage } from './modal/modal.page';
+import { PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-config-user',
@@ -14,9 +16,7 @@ export class ConfigUserPage implements OnInit {
   private loading;
   checkbox
 
-
-
-  constructor(private storageService: StorageService, public modalController: ModalController, private navCtrl: NavController, private loadingCtrl: LoadingController) {
+  constructor(private storageService: StorageService, public modalController: ModalController, private navCtrl: NavController, private loadingCtrl: LoadingController, private toastController: ToastController, public popoverController: PopoverController) {
     this.loadItems();
    }
 
@@ -60,8 +60,33 @@ export class ConfigUserPage implements OnInit {
     console.log(this.items)
   }
 
-  // delConta(id: number){
-  //   this.storageService.deleteItem(id)
-  // }
+  async showModal(){
+    console.log("Modal aberto")
+    const modal = await this.modalController.create({
+    component: ModalPage
+    });
+    modal.present();
+  }
+
+  async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: ModalPage,
+      cssClass: './help-visualizar-fatura.component.scss',
+      event: ev,
+      translucent: true
+    });
+    await popover.present();
+
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+  }
+
+  async showToast(msg){
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 2000
+    });
+    toast.present();
+  }
 
 }

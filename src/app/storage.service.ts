@@ -149,4 +149,9 @@ export class StorageService {
       return this.storage.set(INVC_KEY, toKeep);
     });
   }
+
+  clearStorage(): Promise<any>{
+    return this.storage.clear();
+  }
+
 }
