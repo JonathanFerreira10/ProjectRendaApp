@@ -40,7 +40,7 @@ const routes: Routes = [
     loadChildren: () => import('../pages/login/visualizar-fatura/visualizar-fatura.module').then( m => m.VisualizarFaturaPageModule)
   },
   {
-    path: 'edit-fatura/:id',
+    path: 'edit-fatura',
     loadChildren: () => import('../pages/login/visualizar-fatura/edit-fatura/edit-fatura.module').then( m => m.EditFaturaPageModule)
   },
   {

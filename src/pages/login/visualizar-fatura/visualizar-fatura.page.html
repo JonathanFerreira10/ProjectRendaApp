@@ -10,14 +10,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor = "let invoice of invoices">
+  <ion-card *ngFor = "let invoice of invoices; let i=index; trackBy: trackByFn">
     <ion-item-sliding id="item100">
       <ion-item>
         <ion-label>
           <ion-icon class="status" *ngIf="invoice.dueDate < today" name="alert" color="danger"></ion-icon>
           <ion-icon class="status" *ngIf="invoice.dueDate > today && invoice.wasPaid == false" name="time" color="warning"></ion-icon>
           <ion-icon class="status" *ngIf="invoice.wasPaid == true" name="checkmark-circle" color="success"></ion-icon>
-          <h2 >{{invoice.title}} R{{invoice.value | currency}}</h2>
+          <h2>{{invoice.title}} R{{invoice.value | currency}}</h2>
           <ion-card-subtitle *ngIf = "invoice.dueDate; else semVencimento"> Vencimento: {{invoice.dueDate | date }}</ion-card-subtitle><br> 
           <ion-card-subtitle *ngIf = "invoice.wasPaid == true; else semPagamento">Pago</ion-card-subtitle>  
           <ng-template #semVencimento>Sem vencimento</ng-template>   
@@ -26,17 +26,19 @@
         </ion-label>
       </ion-item>
 
+      <!-- Em criação ...
       <ion-item-options side="start">
-        <ion-item-option [routerLink] = "['/edit-fatura', invoice.id]">
+        <ion-item-option [routerLink] = "['/edit-fatura']" (click) = "shareIndex(i)">
           <ion-icon slot = "icon-only" name="create-outline"></ion-icon>
         </ion-item-option>
       </ion-item-options>
+      -->
   
       <ion-item-options side="end">
         <ion-item-option color="danger" (click) = "deleteInvoicee()">
           <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-item-option>
-        <ion-item-option color = "success" (click) = "pago()">
+        <ion-item-option color = "success" (click) = "pago(i)">
           <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
         </ion-item-option>
       </ion-item-options>

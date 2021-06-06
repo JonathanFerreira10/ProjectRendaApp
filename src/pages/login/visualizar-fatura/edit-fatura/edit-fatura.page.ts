@@ -7,6 +7,8 @@ import { StorageService, Invoice} from '../../../../app/storage.service';
   styleUrls: ['./edit-fatura.page.scss'],
 })
 export class EditFaturaPage implements OnInit {
+  public sharedIdx;
+
   invoices: Invoice[] = [];
   newInv: Invoice = <Invoice>{}
 
@@ -16,13 +18,18 @@ export class EditFaturaPage implements OnInit {
    }
 
   ngOnInit() {
-    
+    this.sharedIdx = this.storageService.getSharedIdx();
+    console.log(this.sharedIdx);
   }
 
   loadInvoices(){
     this.storageService.getInvoices().then(invoices => {
       this.invoices = invoices;
     });
+  }
+
+  teste(){
+    console.log(this.sharedIdx);
   }
 
 }

@@ -30,6 +30,7 @@ const INVC_KEY = "my-invoices";
   providedIn: 'root'
 })
 export class StorageService {
+  public sharedIdx;
 
   // criando o storage
   constructor(private storage: Storage) { 
@@ -152,6 +153,16 @@ export class StorageService {
 
   clearStorage(): Promise<any>{
     return this.storage.clear();
+  }
+
+  // share index between pages (para edit-fatura)
+
+  setSharedIdx(idx: number){
+    this.sharedIdx = idx;
+  }
+
+  getSharedIdx(): Promise<any>{
+    return this.sharedIdx;
   }
 
 }

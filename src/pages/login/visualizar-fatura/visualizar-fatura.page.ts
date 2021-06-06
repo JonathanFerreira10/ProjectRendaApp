@@ -7,15 +7,11 @@ import { ModalController, Platform, NavController } from '@ionic/angular';
 import { EditFaturaPage } from './edit-fatura/edit-fatura.page'
 import { ActivatedRoute } from '@angular/router';
 
-
-
-
 @Component({
   selector: 'app-visualizar-fatura',
   templateUrl: './visualizar-fatura.page.html',
   styleUrls: ['./visualizar-fatura.page.scss'],
 })
-
 
 export class VisualizarFaturaPage implements OnInit {
   today
@@ -32,7 +28,7 @@ export class VisualizarFaturaPage implements OnInit {
   }
 
   ngOnInit() {
-    
+    console.log("/visualizar-fatura");
   }
 
   loadInvoices(){
@@ -47,11 +43,15 @@ export class VisualizarFaturaPage implements OnInit {
       this.loadInvoices()
     })
   }
-  //Considerar o ID para atualizar as demais faturas.
-  pago(){
-    this.invoices[0].wasPaid = true;
-    this.storageService.updateInvoice(this.invoices[0])
-    console.log(this.invoices[0].wasPaid)
+
+  shareIndex(idx){
+    this.storageService.setSharedIdx(idx);
+  }
+
+  pago(idx){
+    this.invoices[idx].wasPaid = true;
+    this.storageService.updateInvoice(this.invoices[idx])
+    console.log(this.invoices[idx].wasPaid)
   }
 
   async presentPopover(ev: any) {
