@@ -6,25 +6,13 @@
 </ion-header>
 
 <ion-content>
-  <div style="margin-top: 30px;" class="ion-text-center" *ngFor="let item of items">
+  <div style="margin-top: 50px;" class="ion-text-center" *ngFor="let item of items">
     <img class = "prof-img" style="display: block; margin: auto; border-radius: 100%;" [src] = "item.imag">
-  <ion-button style="margin-top: 15px;" (click) = getPhoto()>Alterar foto</ion-button>
+  <ion-button style="margin: 35px auto 20px auto;" (click) = getPhoto()>Alterar foto</ion-button>
   </div><br>
-  
 
   <ion-list>
-    <ion-item>
-      <ion-label class="dark-mode">
-        Modo Noturno
-        <ion-icon name="contrast-outline" class="temaicon"></ion-icon>
-      </ion-label>
-
-      <label class="switch ion-float-right">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </ion-item>
-
+    
     <ion-item *ngFor = "let item of items">
       <ion-label position="floating">Alterar Nome: <span style="font-size: 10px; color: #1DDC7B;"><b>{{item.name}}</b></span></ion-label>
       <ion-input [(ngModel)]="newItem.name"></ion-input>  
@@ -35,18 +23,9 @@
       <ion-input [(ngModel)]="newItem.income"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label>
-        Exibir ajuda
-      </ion-label>
-      <label class="switch ion-float-right">
-        <input type="checkbox" checked="checkBox">
-        <span class="slider round"></span>
-      </label>
-    </ion-item>
   </ion-list>
 
-  <div style="margin-top: 20px;" class="ion-text-center">
+  <div style="margin: 35px auto 20px auto;" class="ion-text-center">
     <ion-button (click) = "salvarAlteracoes()">Salvar alterações</ion-button>
   </div>
 </ion-content>

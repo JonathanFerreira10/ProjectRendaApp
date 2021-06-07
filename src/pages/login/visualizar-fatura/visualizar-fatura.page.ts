@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService, Invoice} from '../../../app/storage.service';
+import { StorageService, Invoice, Item} from '../../../app/storage.service';
 import { Storage } from '@ionic/storage-angular';
 import { PopoverController } from '@ionic/angular';
 import { HelpVisualizarFaturaComponent } from './help-visualizar-fatura/help-visualizar-fatura.component'
@@ -19,6 +19,8 @@ export class VisualizarFaturaPage implements OnInit {
   invoices: Invoice[] = [];
   newInv: Invoice = <Invoice>{};
 
+  items: Item[] = [];
+
   public invoicess
   
   constructor(private storageService: StorageService, private storage: Storage, public popoverController: PopoverController, public modalController: ModalController, private plt: Platform, private nav: NavController, route: ActivatedRoute) {
@@ -37,9 +39,18 @@ export class VisualizarFaturaPage implements OnInit {
     });
   }
 
-  deleteInvoicee(){
-    this.storageService.deleteInvoice(this.invoices.pop().id).then(invoice => {
+  /*
+  deleteInvoice(){
+      this.storageService.deleteInvoice(this.invoices.pop().id).then(invoice => {
       window.console.log("Removido")
+      this.loadInvoices()
+    })
+  }
+  */
+
+  deleteInvoice(idx){
+      this.storageService.deleteInvoice(this.invoices[idx].id).then(invoice => {
+      console.log("Removido")
       this.loadInvoices()
     })
   }
@@ -52,6 +63,15 @@ export class VisualizarFaturaPage implements OnInit {
     this.invoices[idx].wasPaid = true;
     this.storageService.updateInvoice(this.invoices[idx])
     console.log(this.invoices[idx].wasPaid)
+  }
+
+  goToHome(){
+    this.storageService.getItems().then(items => {
+      this.items = items;
+
+      // sempre retorna para home do index 0, caso tenha mais usuarios deve ser tratado.
+      window.location.href=`/home/${this.items[0].name}`;
+    });
   }
 
   async presentPopover(ev: any) {

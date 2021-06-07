@@ -10,10 +10,10 @@
 <ion-content>
   <div id="dashboard">
     <div class="ion-padding">
-      <h2 style="color: #ffffff;" class="ion-no-margin"><strong>Bem Vindo, {{username}}</strong></h2>
+      <h2 style="color: #ffffff; margin: 10px auto 30px auto;" class="ion-no-margin"><strong>Bem Vindo, {{username}}</strong></h2>
       <ion-card>
         <ion-card-content>
-          <ion-card-header class="ion-no-padding">
+          <ion-card-header style="margin-bottom: 10px;" class="ion-no-padding">
             <h2><strong>Saldo Disponível</strong></h2>
           </ion-card-header>
           <ion-slides class="fundograph" *ngFor="let item of items">
@@ -23,26 +23,13 @@
             [title]="item.income"
             [titleFontSize]= "'15'"
             [titleColor]="'#000000'"
-            [subtitle]="'Saldo'"
+            [subtitle]="'Saldo atual'"
             [subtitleColor]="'#000000'"
             [showUnits]="false"
             [outerStrokeWidth]="12"
             [innerStrokeWidth]="2"
             [outerStrokeColor]="'#78C000'"
             [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="300"
-            ></circle-progress>
-            <circle-progress
-            [percent]="85"
-            [radius]="60"
-            [showTitle]="false"
-            [showSubtitle]="false"
-            [showUnits]="false"
-            [showInnerStroke]="false"
-            [outerStrokeWidth]="12"
-            [innerStrokeWidth]="5"
-            [outerStrokeColor]="'#da0101'"
             [animation]="true"
             [animationDuration]="300"
             ></circle-progress>
@@ -73,7 +60,7 @@
 </ion-content>
 
 <ion-toolbar>
-  <ion-slides [options]="slidesOptions">
+  <ion-slides style="padding: 5px;" [options]="slidesOptions">
     <ion-slide *ngFor="let option of options" [routerLink]="option.url">
       <ion-icon [name]="option.icon"></ion-icon>
       <div class="container">

@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar color="success">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home/">
-      </ion-back-button>
+      <!-- <ion-back-button defaultHref="/home/"> -->
+        <ion-icon style="margin-left: 5px;" slot="start" name="arrow-back" (click) = "goToHome()"></ion-icon>
     </ion-buttons>
     <ion-title><strong>Visualizar Faturas</strong></ion-title>
     <ion-icon class = "ion-icon" slot = "end" name="help-circle-outline" (click) = "presentPopover()"></ion-icon>
@@ -15,7 +15,7 @@
       <ion-item>
         <ion-label>
           <ion-icon class="status" *ngIf="invoice.dueDate < today" name="alert" color="danger"></ion-icon>
-          <ion-icon class="status" *ngIf="invoice.dueDate > today && invoice.wasPaid == false" name="time" color="warning"></ion-icon>
+          <ion-icon class="status" *ngIf="invoice.dueDate > today && (invoice.wasPaid == false || invoice.wasPaid == null)" name="time" color="warning"></ion-icon>
           <ion-icon class="status" *ngIf="invoice.wasPaid == true" name="checkmark-circle" color="success"></ion-icon>
           <h2>{{invoice.title}} R{{invoice.value | currency}}</h2>
           <ion-card-subtitle *ngIf = "invoice.dueDate; else semVencimento"> Vencimento: {{invoice.dueDate | date }}</ion-card-subtitle><br> 
@@ -33,11 +33,14 @@
         </ion-item-option>
       </ion-item-options>
       -->
+
+      <ion-item-options side="start">
+        <ion-item-option color="danger" (click) = "deleteInvoice(i)">
+          <ion-icon slot = "icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
   
       <ion-item-options side="end">
-        <ion-item-option color="danger" (click) = "deleteInvoicee()">
-          <ion-icon slot="icon-only" name="trash"></ion-icon>
-        </ion-item-option>
         <ion-item-option color = "success" (click) = "pago(i)">
           <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
         </ion-item-option>

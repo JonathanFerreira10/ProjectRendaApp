@@ -13,6 +13,9 @@ import { ConfigUserPage } from './config-user/config-user.page'
 export class HomePage {
   today;
 
+  //public invoiceTotal = 0;
+  //public saldoRestante = 0;
+
   username : string;
 
   invoices: Invoice[] = [];
@@ -46,6 +49,22 @@ export class HomePage {
       this.items = items;
       this.username = this.items[0].name;
     });
+
+    /*
+    this.storageService.getInvoices().then(invoices => {
+      this.invoices = invoices;
+      for(let i = 0; i <= this.invoices.length; i++){
+        this.storageService.getInvoices().then(invoices => {
+          this.invoices = invoices;
+          if(this.invoices[i].wasPaid == true){
+            this.invoiceTotal = this.invoiceTotal + this.invoices[i].value;
+            console.log(this.invoiceTotal);
+          }
+        });
+      }
+    });
+    */
+    
   }
 
   loadInvoices(){
@@ -68,13 +87,6 @@ export class HomePage {
     });
     modal.present();
   }
-
-
-  
-
-  renda = 75.2
-
-
 
 }
 
