@@ -18,7 +18,8 @@ export interface Invoice {
   monthly: boolean,
   renewalDay: number,
   paymentDate: number,
-  dueDate: number
+  dueDate: number,
+  voucher: string
 }
 
 // criar interface para compras simples

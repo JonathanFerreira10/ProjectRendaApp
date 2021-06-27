@@ -47,6 +47,11 @@ const routes: Routes = [
     path: 'config-user',
     loadChildren: () => import('./home/config-user/config-user.module').then( m => m.ConfigUserPageModule)
   },
+  {
+    path: 'modal-voucher',
+    loadChildren: () => import('../pages/login/visualizar-fatura/modal-voucher/modal-voucher.module').then( m => m.ModalVoucherPageModule)
+  },
+
 
 
   

@@ -18,8 +18,13 @@
           <ion-icon class="status" *ngIf="invoice.dueDate > today && (invoice.wasPaid == false || invoice.wasPaid == null)" name="time" color="warning"></ion-icon>
           <ion-icon class="status" *ngIf="invoice.wasPaid == true" name="checkmark-circle" color="success"></ion-icon>
           <h2>{{invoice.title}} R{{invoice.value | currency}}</h2>
+          <div class="voucherImag">
+            <img  [src] = "invoice.voucher">
+          </div>
           <ion-card-subtitle *ngIf = "invoice.dueDate; else semVencimento"> Vencimento: {{invoice.dueDate | date }}</ion-card-subtitle><br> 
-          <ion-card-subtitle *ngIf = "invoice.wasPaid == true; else semPagamento">Pago</ion-card-subtitle>  
+          <ion-card-subtitle *ngIf = "invoice.wasPaid == true; else semPagamento">Pago
+            <ion-button class="voucher" fill="outline" (click) = "voucher(i)"><b>Anexar comprovante</b></ion-button>
+          </ion-card-subtitle>  
           <ng-template #semVencimento>Sem vencimento</ng-template>   
           <ng-template #semTitulo>Sem Titulo e valor</ng-template>
           <ng-template #semPagamento>Pendente</ng-template>
@@ -43,6 +48,9 @@
       <ion-item-options side="end">
         <ion-item-option color = "success" (click) = "pago(i)">
           <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
+        </ion-item-option>
+        <ion-item-option *ngIf = "invoice.wasPaid" color = "white" (click) = "showModalVoucher(i)">
+          <ion-icon slot="icon-only" name="images-outline"></ion-icon>
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>

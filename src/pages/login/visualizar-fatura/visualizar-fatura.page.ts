@@ -6,6 +6,9 @@ import { HelpVisualizarFaturaComponent } from './help-visualizar-fatura/help-vis
 import { ModalController, Platform, NavController } from '@ionic/angular';
 import { EditFaturaPage } from './edit-fatura/edit-fatura.page'
 import { ActivatedRoute } from '@angular/router';
+import {Plugins, CameraResultType, CameraSource} from '@capacitor/core'
+import { ModalVoucherPage } from './modal-voucher/modal-voucher.page'
+
 
 @Component({
   selector: 'app-visualizar-fatura',
@@ -15,7 +18,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class VisualizarFaturaPage implements OnInit {
   today
-
+  public image = ""
   invoices: Invoice[] = [];
   newInv: Invoice = <Invoice>{};
 
@@ -39,18 +42,8 @@ export class VisualizarFaturaPage implements OnInit {
     });
   }
 
-  /*
-  deleteInvoice(){
-      this.storageService.deleteInvoice(this.invoices.pop().id).then(invoice => {
-      window.console.log("Removido")
-      this.loadInvoices()
-    })
-  }
-  */
-
   deleteInvoice(idx){
       this.storageService.deleteInvoice(this.invoices[idx].id).then(invoice => {
-      console.log("Removido")
       this.loadInvoices()
     })
   }
@@ -64,6 +57,37 @@ export class VisualizarFaturaPage implements OnInit {
     this.storageService.updateInvoice(this.invoices[idx])
     console.log(this.invoices[idx].wasPaid)
   }
+
+  async voucher(idx){
+    const photo = await Plugins.Camera.getPhoto({
+      resultType: CameraResultType.DataUrl,
+    });
+    this.image = photo.dataUrl
+    this.newInv.voucher = this.image
+    this.invoices[idx].voucher = this.newInv.voucher
+    this.storageService.updateInvoice(this.invoices[idx])
+  }
+
+ async showModalVoucher(){
+   console.log("Modal aberto")
+   const modal = await this.modalController.create({
+    component: ModalVoucherPage
+    });
+    modal.present();
+  }
+
+// async presentPopoverVoucher(ev: any) {
+//   const popover = await this.popoverController.create({
+//     component: ModalVoucherPage,
+//     cssClass: './help-visualizar-fatura.component.scss',
+//     event: ev,
+//     translucent: true
+//   });
+//   await popover.present();
+
+//   const { role } = await popover.onDidDismiss();
+//   console.log('onDidDismiss resolved with role', role);
+// }
 
   goToHome(){
     this.storageService.getItems().then(items => {
