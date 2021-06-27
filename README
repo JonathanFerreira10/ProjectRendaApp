@@ -18,6 +18,10 @@ Ng-Circle-Progress: npm install ng-circle-progress --save (Comando para os grafi
 
 npm install @ionic/pwa-elements (Comando para usar a camera da Web)
 
+import {defineCustomElements} from '@ionic/pwa-elements/loader' (Definir no arquivo main.ts)
+
+defineCustomElements(window)(Definir no arquivo main.ts)
+
 
 INSTRUCTIONS: 
 
