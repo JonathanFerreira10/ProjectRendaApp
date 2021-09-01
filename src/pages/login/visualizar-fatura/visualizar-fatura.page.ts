@@ -8,6 +8,7 @@ import { EditFaturaPage } from './edit-fatura/edit-fatura.page'
 import { ActivatedRoute } from '@angular/router';
 import {Plugins, CameraResultType, CameraSource} from '@capacitor/core'
 import { ModalVoucherPage } from './modal-voucher/modal-voucher.page'
+import { ConnectionAPIService } from '../../../app/connection-api.service'
 
 
 @Component({
@@ -21,24 +22,42 @@ export class VisualizarFaturaPage implements OnInit {
   public image = ""
   invoices: Invoice[] = [];
   newInv: Invoice = <Invoice>{};
+  newItem: Item = <Item>{};
 
   items: Item[] = [];
 
   public invoicess
   
-  constructor(private storageService: StorageService, private storage: Storage, public popoverController: PopoverController, public modalController: ModalController, private plt: Platform, private nav: NavController, route: ActivatedRoute) {
+  constructor(
+    private storageService: StorageService, 
+    private storage: Storage, 
+    public popoverController: PopoverController, 
+    public modalController: ModalController, 
+    private plt: Platform, 
+    private nav: NavController,
+    route: ActivatedRoute, 
+    private connectionAPI: ConnectionAPIService
+    ) {
     // get data de hoje
     this.today = new Date().toISOString();
     this.loadInvoices();
+    this.loadItems();
   }
 
   ngOnInit() {
     console.log("/visualizar-fatura");
   }
 
+
   loadInvoices(){
     this.storageService.getInvoices().then(invoices => {
       this.invoices = invoices;
+    });
+  }
+
+  loadItems(){
+    this.storageService.getItems().then(items => {
+      this.items = items;
     });
   }
 
@@ -55,7 +74,21 @@ export class VisualizarFaturaPage implements OnInit {
   pago(idx){
     this.invoices[idx].wasPaid = true;
     this.storageService.updateInvoice(this.invoices[idx])
-    console.log(this.invoices[idx].wasPaid)
+    const data = `
+      {
+        "valueInvoice":${this.invoices[idx].value}, 
+        "income":${this.items[0].income}
+      }
+    `;
+    const API = JSON.parse(data)
+
+    this.connectionAPI.post(API).subscribe(dados => {
+      console.log("Sucesso!", dados)
+      this.items[0].income = dados['total']
+      this.storageService.updateItem(this.items[0])
+    }, err => {
+      console.log("Erro", err)
+    });
   }
 
   async voucher(idx){
