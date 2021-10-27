@@ -30,7 +30,7 @@ export class LoginPage implements OnInit {
     });
     modal.present();
   }
-
+  
   ngOnInit() {
     // Validar se ja possui um usuário no storage, caso sim travar cadastro.
     this.storageService.getItems().then(items => {
@@ -41,14 +41,11 @@ export class LoginPage implements OnInit {
     });
     // Obs: se não tiver nenhum usuário no storage, é comum o erro "this.items is null" mas ele não impede nada.
   }
-
+  
   loadItems(){
     this.storageService.getItems().then(items => {
       this.items = items;
     });
   }
 
-  // pushPage(){
-  //   this.nav.navigateForward(`/home/${this.items[0].name}`);
-  // }
 }
