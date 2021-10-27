@@ -10,10 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ModalPage } from '../pages/login/Modals/modal/modal.page';
 
+import * as $ from 'jquery';
+
+import { HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot()],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(), HttpClientModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

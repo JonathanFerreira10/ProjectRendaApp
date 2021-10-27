@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <!-- <ion-back-button defaultHref="/home/"> -->
+        <ion-icon style="margin-left: 5px;" slot="start" name="arrow-back" (click) = "goToHome()"></ion-icon>
+    </ion-buttons>
+    <ion-title><strong>Visualizar Faturas</strong></ion-title>
+    <ion-icon class = "ion-icon" slot = "end" name="help-circle-outline" (click) = "presentPopover()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor = "let invoice of invoices; let i=index; trackBy: trackByFn">
+    <ion-item-sliding id="item100">
+      <ion-item>
+        <ion-label>
+          <ion-icon class="status" *ngIf="invoice.dueDate < today" name="alert" color="danger"></ion-icon>
+          <ion-icon class="status" *ngIf="invoice.dueDate > today && (invoice.wasPaid == false || invoice.wasPaid == null)" name="time" color="warning"></ion-icon>
+          <ion-icon class="status" *ngIf="invoice.wasPaid == true" name="checkmark-circle" color="success"></ion-icon>
+          <h2>{{invoice.title}} R{{invoice.value | currency}}</h2>
+          <div class="voucherImag">
+            <img  [src] = "invoice.voucher">
+          </div>
+          <ion-card-subtitle *ngIf = "invoice.dueDate; else semVencimento"> Vencimento: {{invoice.dueDate | date }}</ion-card-subtitle><br> 
+          <ion-card-subtitle *ngIf = "invoice.wasPaid == true; else semPagamento">Pago
+            <ion-button class="voucher" fill="outline" (click) = "voucher(i)"><b>Anexar comprovante</b></ion-button>
+          </ion-card-subtitle>  
+          <ng-template #semVencimento>Sem vencimento</ng-template>   
+          <ng-template #semTitulo>Sem Titulo e valor</ng-template>
+          <ng-template #semPagamento>Pendente</ng-template>
+        </ion-label>
+      </ion-item>
+
+      <!-- Em criação ...
+      <ion-item-options side="start">
+        <ion-item-option [routerLink] = "['/edit-fatura']" (click) = "shareIndex(i)">
+          <ion-icon slot = "icon-only" name="create-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      -->
+
+      <ion-item-options side="start">
+        <ion-item-option color="danger" (click) = "deleteInvoice(i)">
+          <ion-icon slot = "icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+  
+      <ion-item-options side="end">
+        <ion-item-option color = "success" (click) = "pago(i)">
+          <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
+        </ion-item-option>
+        <ion-item-option *ngIf = "invoice.wasPaid" color = "white" (click) = "showModalVoucher(i)">
+          <ion-icon slot="icon-only" name="images-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-card>
+  
+</ion-content>
+
+  

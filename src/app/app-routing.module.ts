@@ -23,6 +23,45 @@ const routes: Routes = [
     path: 'modal',
     loadChildren: () => import('../pages/login/Modals/modal/modal.module').then( m => m.ModalPageModule)
   },
+  {
+    path: 'coach',
+    loadChildren: () => import('../pages/login/coach/coach.module').then( m => m.CoachPageModule)
+  },
+  {
+    path: 'cadastrar-fatura', //Para puxar o nome do usuário deve ser usado /:name/cadastrar-fatura porém, precisa ser alterado na home a parte do redirecionamento. 
+    loadChildren: () => import('../pages/login/cadastrar-fatura/cadastrar-fatura.module').then( m => m.CadastrarFaturaPageModule)
+  },
+  {
+    path: 'cadastrar-gasto',
+    loadChildren: () => import('../pages/login/cadastrar-gasto/cadastrar-gasto.module').then( m => m.CadastrarGastoPageModule)
+  },
+  {
+    path: 'visualizar-fatura',
+    loadChildren: () => import('../pages/login/visualizar-fatura/visualizar-fatura.module').then( m => m.VisualizarFaturaPageModule)
+  },
+  {
+    path: 'edit-fatura',
+    loadChildren: () => import('../pages/login/visualizar-fatura/edit-fatura/edit-fatura.module').then( m => m.EditFaturaPageModule)
+  },
+  {
+    path: 'config-user',
+    loadChildren: () => import('./home/config-user/config-user.module').then( m => m.ConfigUserPageModule)
+  },
+  {
+    path: 'modal-voucher',
+    loadChildren: () => import('../pages/login/visualizar-fatura/modal-voucher/modal-voucher.module').then( m => m.ModalVoucherPageModule)
+  },
+
+
+
+  
+
+
+
+
+
+
+
   
   
 ];

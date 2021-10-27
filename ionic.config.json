@@ -1,5 +1,7 @@
 {
   "name": "RendaApp",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

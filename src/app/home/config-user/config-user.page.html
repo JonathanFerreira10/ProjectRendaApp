@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-icon class="ion-float-left arrow" name="arrow-back" (click)="close()"></ion-icon>
+    <ion-title><strong>Configurações</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="margin-top: 50px;" class="ion-text-center" *ngFor="let item of items">
+    <img class = "prof-img" style="display: block; margin: auto; border-radius: 100%;" [src] = "item.imag">
+  <ion-button style="margin: 35px auto 20px auto;" (click) = getPhoto()>Alterar foto</ion-button>
+  </div><br>
+
+  <ion-list>
+    
+    <ion-item *ngFor = "let item of items">
+      <ion-label position="floating">Alterar Nome: <span style="font-size: 10px; color: #1DDC7B;"><b>{{item.name}}</b></span></ion-label>
+      <ion-input [(ngModel)]="newItem.name"></ion-input>  
+    </ion-item>
+
+    <ion-item *ngFor = "let item of items">
+      <ion-label position="floating">Renda: <span style="font-size: 10px; color: #1DDC7B;"><b>{{item.income}}</b></span></ion-label>
+      <ion-input [(ngModel)]="newItem.income"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div style="margin: 35px auto 20px auto;" class="ion-text-center">
+    <ion-button (click) = "salvarAlteracoes()">Salvar alterações</ion-button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div style="margin-top: 10px;" class="ion-text-center">
+    <ion-button (click)="presentPopover()" color="danger">Deletar perfil</ion-button>
+    <div style="width: 80%; margin:auto">
+      <p style="font-size: 10px;">Ao deletar seu perfil você perderá permanetemente todos os seus dados.</p>
+    </div>
+  </div>
+</ion-footer>

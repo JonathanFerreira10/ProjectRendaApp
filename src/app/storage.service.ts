@@ -4,8 +4,9 @@ import { Storage } from '@ionic/storage-angular';
 export interface Item {
   id: number,
   name: string,
-  income: number,
-  modified: number
+  imag: string,
+  modified: number,
+  income: number
 }
 
 export interface Invoice {
@@ -13,8 +14,15 @@ export interface Invoice {
   title: string,
   value: number,
   modified: number,
-  wasPaid: boolean
+  wasPaid: boolean,
+  monthly: boolean,
+  renewalDay: number,
+  paymentDate: number,
+  dueDate: number,
+  voucher: string
 }
+
+// criar interface para compras simples
 
 const ITEMS_KEY = "my-items";
 const INVC_KEY = "my-invoices";
@@ -23,6 +31,7 @@ const INVC_KEY = "my-invoices";
   providedIn: 'root'
 })
 export class StorageService {
+  public sharedIdx;
 
   // criando o storage
   constructor(private storage: Storage) { 
@@ -142,4 +151,19 @@ export class StorageService {
       return this.storage.set(INVC_KEY, toKeep);
     });
   }
+
+  clearStorage(): Promise<any>{
+    return this.storage.clear();
+  }
+
+  // share index between pages (para edit-fatura)
+
+  setSharedIdx(idx: number){
+    this.sharedIdx = idx;
+  }
+
+  getSharedIdx(): Promise<any>{
+    return this.sharedIdx;
+  }
+
 }

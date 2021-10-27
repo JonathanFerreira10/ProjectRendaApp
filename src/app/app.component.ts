@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+
+ngOnInit(){
+  this.checkDarkTheme();
+}
+
+checkDarkTheme(){
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  console.log(prefersDark);
+}
+
 }

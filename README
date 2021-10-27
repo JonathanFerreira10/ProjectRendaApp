@@ -23,11 +23,3 @@ import {defineCustomElements} from '@ionic/pwa-elements/loader' (Definir no arqu
 defineCustomElements(window)(Definir no arquivo main.ts)
 
 
-INSTRUCTIONS: 
-
-- Não exluam o arquivo storage.service.ts 
-- Ao finalizar a implementação do código, publique o código na devida Branch. 
-- A branch Segunda-Tela é a branch principal que está com o código mais atualizado.
-
-
-

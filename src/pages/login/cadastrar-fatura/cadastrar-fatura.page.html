@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/undefined">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title><strong>Cadastrar fatura</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Animação SVG (background) -->
+  <div class="custom-shape-divider-top-1617075690">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    </svg>
+
+    <!-- Formulario de cadastro de fatura -->
+    <ion-row class="row-content-top">
+      <ion-col class="col-center" size-sm="12" size-md="6" size-lg="4">
+        <ion-item>
+          <ion-label position="fixed">Título: </ion-label>
+          <ion-input [(ngModel)]="newInv.title"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Valor: </ion-label>
+          <ion-input [(ngModel)]="newInv.value"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Ja foi paga ? </ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="newInv.wasPaid"></ion-checkbox>
+        </ion-item>
+        <ion-item *ngIf="newInv.wasPaid == true">
+          <ion-datetime [max]="today" [(ngModel)]="newInv.paymentDate" placeholder="selecione a data do pagamento">
+          </ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mensal ? </ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="newInv.monthly"></ion-checkbox>
+        </ion-item>
+        <ion-item *ngIf="newInv.monthly == true">
+          <ion-datetime displayFormat="DD" [(ngModel)]="newInv.renewalDate" placeholder="selecione o dia da renovação (DD)"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Vencimento: </ion-label>
+          <ion-datetime [(ngModel)]="newInv.dueDate" placeholder="selecione a data"></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Botões de cadastro -->
+    <ion-row class="row-content-bottom">
+      <ion-col class="col-center ion-text-center" size-sm="12" size-md="6" size-lg="4">
+        <ion-button color="success" (click)="addInvoice()">Adicionar</ion-button>
+        <ion-button color="danger" (click)="cancel()">Cancelar</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

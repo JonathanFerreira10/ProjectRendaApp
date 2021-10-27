@@ -6,14 +6,20 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    NgCircleProgressModule.forRoot({
+
+     })
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  bootstrap:    [ HomePage ]
 })
 export class HomePageModule {}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavController, LoadingController } from '@ionic/angular';
+import { ModalController, NavController, LoadingController, ToastController } from '@ionic/angular';
 import { StorageService, Item } from '../../../../app/storage.service';
+import {Plugins, CameraResultType, CameraSource} from '@capacitor/core'
 
 @Component({
   selector: 'app-modal',
@@ -14,7 +15,7 @@ export class ModalPage implements OnInit {
 
   private loading;
 
-  constructor(private storageService: StorageService, public modalController: ModalController, private navCtrl: NavController, private loadingCtrl: LoadingController) { }
+  constructor(private storageService: StorageService, public modalController: ModalController, private navCtrl: NavController, private loadingCtrl: LoadingController, private toastController: ToastController) { }
 
   ngOnInit() {
     this.modalController.dismiss();
@@ -40,6 +41,7 @@ export class ModalPage implements OnInit {
 
     this.storageService.addItem(this.newItem).then(item => {
       this.newItem = <Item>{};
+      this.showToast(`Usuário criado!`);
       this.loadItems();
     });
   }
@@ -50,4 +52,23 @@ export class ModalPage implements OnInit {
     });
   }
 
+  async showToast(msg){
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  public image = "https://ionicframework.com/docs/demos/api/avatar/avatar.svg"
+
+  public async getPhoto(){
+    const photo = await Plugins.Camera.getPhoto({
+      resultType: CameraResultType.DataUrl
+    });
+    this.image = photo.dataUrl
+    this.newItem.imag = this.image
+    this.storageService.updateItem(this.items[0])
+    console.log(this.items)
+  }
 }

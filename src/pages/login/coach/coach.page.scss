@@ -1,0 +1,196 @@
+.pagina{
+    width: auto;
+    background-color: rgb(64, 184, 214);
+    height: 35px;
+    margin: 0px;
+    text-align: center;
+    padding: 0px;
+}
+.preto{
+    text-align: center;
+    color: #000000;
+    margin: 5px;
+
+}
+
+.roxo{
+    color: #BA55D3;
+}
+
+.centro{
+    text-align: center;
+}
+.margem{
+    height: auto;
+    display: block;
+    padding: auto;
+    // margin: auto;
+    margin-left: 12px;
+    margin-top: 12px;
+}
+.ml-auto{
+    margin-left: auto;
+}
+.noticias{
+    border: 1px solid darkgrey;
+}
+.ww{
+    width: 100px;
+}
+.fixador{
+    margin: 0;
+    padding: 0;
+}
+.branco{
+    color: #ffffff;
+}
+.card{
+    // border: 0.5px solid grey;
+    text-align: center;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    margin-top: 4px;
+    // height: 354px;
+    padding: 5px;
+    padding-bottom: 5px;
+    padding-bottom: 5px;
+    margin: 18px;
+    background-color: #ececec;
+}
+
+.carddicas{
+
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 3px;
+    text-align: center;
+    min-height: 15px;
+    max-height: 300px;
+    border-top: 8px solid #2dd36f;
+}
+
+.rolagem{
+    margin: auto;
+    text-align: center;
+    padding: auto;
+    height: 70%;
+    overflow-y: scroll;
+}
+::-webkit-scrollbar{
+    width: 7px;
+}
+::-webkit-scrollbar-track{
+    background-color: #2fdf75;
+}
+::-webkit-scrollbar-button{
+    background-color: #00ff0d00;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(0, 0, 0);
+}
+
+.dicas{
+border: 3px solid rgb(0, 0, 0) ;
+width: 500px;
+text-align: center
+}
+
+.rolagemdicas{
+
+    margin: auto;
+    text-align: center;
+    padding: auto;
+    height: 35%;
+    overflow-y: scroll;
+}
+.corcardicas{
+    color: #e3e7e3;
+}
+
+.swiper-slide {
+    display: block;
+  }
+
+.swiper-slide h2 {
+    margin-top: 1.8rem;
+  }
+
+
+h2{
+    margin: auto;
+    size: auto;
+    height: auto;
+  }
+
+h1{
+        font-weight: 30;
+        color: var(--ion-color-step-600, #000000);
+  }
+ion-slides {
+    height: 100%;
+  }
+b {
+    color: var(--ion-color-step-600, #000000);
+  }
+
+p {
+    padding: 0 40px;
+    font-size: 15px;
+    color: var(--ion-color-step-600, #60646b);
+  }
+
+p b {
+    color: var(--ion-text-color, #000000);
+  }
+
+.ion{
+    font-size: 32px;
+    margin-right: 6px;
+}
+
+.tips {
+    border-top: 6px solid #2dd36f;
+}
+
+// DICAS - INICIO
+.title {
+    font-size: 22px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content {
+    font-size: 16px;
+    text-align: left;
+    font-weight: unset;
+}
+// DICAS - FIM
+
+.card-title {   
+    background-color: #2dd36f;
+    padding: 5px;
+    border-radius: 10px;
+
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+}
+
+.card-content {
+    margin-top: 20px;
+}
+
+.cover-photo {
+    width: 40vh;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.logo-company {
+    position: absolute;
+}

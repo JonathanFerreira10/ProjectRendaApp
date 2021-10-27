@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/visualizar-fatura">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title><strong>Editar Fatura</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--pagina em criação (erro: sharedidx undefined) -->
+  
+  <ion-label position="floating">Alterar título: <span style="font-size: 10px; color: #1DDC7B;"><b></b></span></ion-label>
+  <ion-input value="{{invoices[sharedIdx].title}}"></ion-input>  
+
+  <ion-label position="floating">Alterar valor: <span style="font-size: 10px; color: #1DDC7B;"><b></b></span></ion-label>
+  <ion-input value="{{invoices[sharedIdx].value}}"></ion-input>
+
+  <ion-label position="floating">Alterar vencimento: <span style="font-size: 10px; color: #1DDC7B;"><b></b></span></ion-label>
+  <ion-input value="{{invoices[sharedIdx].dueDate}}"></ion-input>
+
+  <ion-button color="success" (click)="teste()">testar index</ion-button>
+
+</ion-content>

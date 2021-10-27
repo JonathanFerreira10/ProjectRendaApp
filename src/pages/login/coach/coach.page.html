@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/undefined">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title><strong>Coach</strong></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<ion-slides [options]="{slidesPerView: 'auto'}">
+  <ion-slide>
+    <ion-row>
+      <ion-col>
+  </ion-col>
+  </ion-row>
+<div>
+      <br>
+    <b ><strong>Estamos aqui para ajuda-lo!</strong>    </b>
+    <p>As melhores noticias sobre o mercado financeiro você encontra aqui</p>
+</div>
+  
+<h2 class="rolagem">
+  <ion-row  size="auto">
+    <ion-card  color="#d7d8da" class="card" *ngFor="let new of news" size="large" scroll-bar="65%" >
+      <ion-card-content class="ion-no-padding" >
+        <ion-row>
+          <ion-col size="auto">
+            <img class="cover-photo" [src]="new.image" alt="">
+          </ion-col>
+            <div class="logo-company">
+              <ion-avatar class="margem">
+                <img src="https://investnews.com.br/wp-content/uploads/2020/01/Investnews-logo-2-linhas-2x.png">
+              </ion-avatar>
+            </div>
+        <ion-row size="auto">
+          <ion-col size="auto"></ion-col>
+          <ion-col size="auto">
+            <div class="card-title">
+              <span>
+                <a [href]="new.link">{{ new.title }}</a>
+              </span>
+            </div>
+            <div class="card-content">
+              <span>
+                {{ new.content }}
+              </span>
+            </div>
+          </ion-col>
+        </ion-row>
+        </ion-row>
+      </ion-card-content> 
+    </ion-card>
+  </ion-row>
+</h2>
+
+  </ion-slide>  
+  <ion-slide>
+    <ion-row>
+      <ion-col>
+  </ion-col>
+  </ion-row>
+<div>
+      <br>
+    <b><strong>Vamos auxilia-lo!</strong></b>
+    <p>Dicas que podem mudar sua vida financeira? Aqui tem!</p>
+</div> 
+
+<ion-row>
+  <ion-col>
+    <ion-button (click)="showAlert()" color="success" class="centro" >
+      <ion-icon name="build-outline"></ion-icon>
+      Inteligentes
+    </ion-button>
+    <h2 class="rolagemdicas">
+      <ion-card class="tips" size="auto" class="carddicas" color="#EBEBEB" scroll-bar="65%" *ngFor="let tip of tips">
+        <ion-card-header class="title">
+          <span>{{ tip.title }}</span>
+          <!-- <ion-icon name="pricetags"></ion-icon> -->
+        </ion-card-header>
+        <ion-card-content class="content">
+          <span>{{ tip.content }}</span>
+        </ion-card-content>
+      </ion-card>
+    </h2>
+  </ion-col>
+
+</ion-row>
+    
+    
+    </ion-slide>
+  </ion-slides>
+
+
+</ion-content>
+
