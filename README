@@ -1,25 +1,28 @@
-# ProjetcRendaApp
+# Financial Management Application RendApp! 
 
-DEPENDECIES: 
+Before starting, check below some dependencies and install in the root directory of the RendApp project. 
 
-IONIC STORAGE: npm i @ionic/storage-angular (Caso não instale essa dependecia o Storage não irá funcionar, instale na raiz do projeto)
+## DEPENDECIES:
+ 
+| Dependecies   | Command for install          |
+|---------------|------------------------------|
+| Ionic Storage | npm i @ionic/storage-angular |
+| Ionic         | npm i -g @ionic/cli          |
+| Jquery        | npm install @types/jquery    |
+| Ng-Circle-Progress | npm install ng-circle-progress --save |
+| Ionic Camera Web | npm install @ionic/pwa-elements | 
 
-IONIC: npm i -g @ionic/cli (Comando necessário para instalar o Ionic)
 
-JQUERY: npm install @types/jquery(Comando necessário para instalar o jQuery)
+## If it's necessary
 
-import * as $ from 'jquery' (Importar no "App.module")
+ - import * as $ from 'jquery' (Import in "App.module")
 
-ionic integrations enable capacitor (Comando para poder habilitar as funções do capacitor)
+ - ionic integrations enable capacitor (Command to enable capacitor functions, run on terminal)
 
-ionic capacitor add android (Comando para adicionar o android ao projeto)
+ - ionic capacitor add android (Command to add android to the project, run in terminal)
 
-Ng-Circle-Progress: npm install ng-circle-progress --save (Comando para os graficos na Dashboard)
+ - import {defineCustomElements} from '@ionic/pwa-elements/loader' (Define in main.ts file)
 
-npm install @ionic/pwa-elements (Comando para usar a camera da Web)
-
-import {defineCustomElements} from '@ionic/pwa-elements/loader' (Definir no arquivo main.ts)
-
-defineCustomElements(window)(Definir no arquivo main.ts)
+ - defineCustomElements(window)(Define in main.ts file)
 
 
