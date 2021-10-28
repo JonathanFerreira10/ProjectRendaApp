@@ -6,12 +6,11 @@ Before starting, check below some dependencies and install in the root directory
  
 | Dependecies   | Command for install          |
 |---------------|------------------------------|
-| Ionic Storage | npm i @ionic/storage-angular |
 | Ionic         | npm i -g @ionic/cli          |
+| Ionic Storage | npm i @ionic/storage-angular |
 | Jquery        | npm install @types/jquery    |
 | Ng-Circle-Progress | npm install ng-circle-progress --save |
 | Ionic Camera Web | npm install @ionic/pwa-elements | 
-
 
 ## If it's necessary
 
