@@ -29,7 +29,7 @@ jobs:
     - run: sudo apt install chromium-browser
     - run: npm install
 #     - run: npm run build --if-present
-    - name: NPM Test
+    - name: npm test
       run: |
             export CHROME_BIN=/usr/bin/chromium-browser
             CI=true npm run test-headless
