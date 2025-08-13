@@ -1,4 +1,4 @@
-# Financial Management Application RendApp! 
+# Financial Management Application RendApp ! 
 
 Before starting, check below some dependencies and install in the root directory of the RendApp project. 
 
